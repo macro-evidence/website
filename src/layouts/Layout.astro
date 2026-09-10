@@ -1,0 +1,103 @@
+---
+import interVariable from '@fontsource-variable/inter/files/inter-latin-opsz-normal.woff2?url';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  noindex?: boolean;
+  canonicalPath?: string;
+}
+
+const generatedPath = Astro.url.pathname;
+const publicPath = generatedPath === '/index.html'
+  ? '/'
+  : generatedPath.endsWith('.html')
+    ? generatedPath.slice(0, -'.html'.length)
+    : generatedPath;
+const { title, description, noindex = false, canonicalPath = publicPath } = Astro.props;
+const canonical = new URL(canonicalPath, Astro.site);
+const sitemap = new URL('/sitemap-index.xml', Astro.site);
+const socialImage = new URL(
+  '/assets/social/macro-evidence_standalone-share_1200x630_v1.png',
+  Astro.site,
+);
+const socialAlt = 'Macro Evidence | Open Infrastructure for Macroeconomic Evidence.';
+const isHome = canonical.pathname === '/';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#245B8A" />
+    <meta
+      name="robots"
+      content={noindex
+        ? 'noindex, nofollow'
+        : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'}
+    />
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" type="application/xml" href={sitemap} />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="preload"
+      href={interVariable}
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/brand/macro-evidence_lockup-horizontal-white_v1.svg"
+    />
+    <script is:inline src="/theme.js"></script>
+
+    <meta property="og:site_name" content="Macro Evidence" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={socialAlt} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content={socialAlt} />
+
+    <title>{title}</title>
+  </head>
+  <body>
+    {isHome && (
+      <div
+        itemscope
+        itemtype="https://schema.org/WebSite"
+        itemid="https://macro-evidence.com/#website"
+      >
+        <link itemprop="url" href="https://macro-evidence.com/" />
+        <meta itemprop="name" content="Macro Evidence" />
+      </div>
+    )}
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <Header />
+    <main id="main-content" class="site-main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

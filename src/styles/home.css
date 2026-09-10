@@ -1,0 +1,129 @@
+/* Homepage */
+.home-hero {
+  background: var(--page-bg);
+  color: var(--page-text);
+  border-bottom: 1px solid var(--subtle);
+}
+
+.home-hero-inner {
+  min-height: clamp(32rem, 62vh, 40rem);
+  display: flex;
+  align-items: center;
+  padding-block: clamp(4.25rem, 7vw, 6.25rem);
+}
+
+.home-hero-copy {
+  max-width: 67rem;
+}
+
+
+.home-hero h1 {
+  max-width: 12.5ch;
+}
+
+.home-hero .lead {
+  max-width: 59ch;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+}
+
+.premise-section { background: var(--page-bg); }
+
+.principle-card {
+  padding: 1.4rem 1.35rem 1.5rem;
+  border: 1px solid var(--subtle);
+  border-top: 3px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.principle-card .question {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--page-text);
+  font-size: 1.04rem;
+  font-weight: 700;
+  letter-spacing: -0.018em;
+}
+
+.principle-card p { color: var(--muted); }
+
+.foundation-section { background: var(--surface-soft); }
+.foundation-copy { align-self: center; }
+
+.platform-feature {
+  padding: clamp(1.5rem, 3vw, 2.2rem);
+  border: 1px solid var(--subtle-strong);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.platform-feature .micro-label {
+  margin-bottom: 1rem;
+  color: var(--accent-text);
+}
+
+.platform-feature h3 {
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 1;
+}
+
+.platform-feature p {
+  max-width: 54ch;
+  color: var(--muted);
+}
+
+.platform-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.7rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--subtle);
+}
+
+.platform-status span { color: var(--muted); }
+
+.records-section { background: var(--page-bg); }
+
+.record-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.4rem;
+  border: 1px solid var(--subtle);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.record-card h3 { margin-top: 1.2rem; margin-bottom: 0.65rem; }
+.record-card p { color: var(--muted); }
+.record-card .record-link {
+  margin-top: auto;
+  padding-top: 1.15rem;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.institutional-line {
+  margin-top: 1.25rem;
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+.engage-band {
+  background: var(--surface-soft);
+  color: var(--page-text);
+}
+
+.engage-band h2, .engage-band h3 { color: var(--page-text); }
+.engage-band .section-intro { color: var(--muted); }
+.engage-intro { max-width: 56rem; }
+.path-grid { margin-top: 2.25rem; }
+
+.path-card {
+  padding: 1.15rem 0;
+  border-top: 1px solid var(--subtle-strong);
+}
+
+.path-card p { color: var(--muted); }
+.path-card a { font-weight: 750; }

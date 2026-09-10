@@ -1,0 +1,29 @@
+@media print {
+  :root {
+    color-scheme: light;
+    --page-bg: #ffffff;
+    --page-text: #050816;
+    --surface: #ffffff;
+    --surface-soft: #ffffff;
+    --muted: rgba(5, 8, 22, 0.78);
+  }
+
+  .site-header, .site-footer { display: none !important; }
+  .home-hero, .foundation-section, .records-section, .relationship-section, .engage-band, .page-hero {
+    background: #ffffff !important;
+    color: #050816 !important;
+  }
+  .home-hero h1, .engage-band h2, .engage-band h3, .page-hero h1 { color: #050816 !important; }
+  .home-hero .kicker, .home-hero .lead, .engage-band .eyebrow, .engage-band .section-intro, .page-hero .kicker, .page-hero .lead { color: #050816 !important; }
+  a { color: #050816 !important; text-decoration: underline !important; }
+  .primary-action, .secondary-action {
+    color: #050816 !important;
+    background: transparent !important;
+    border: 0 !important;
+    min-height: auto !important;
+    padding: 0 !important;
+    transition: none !important;
+    box-shadow: none !important;
+  }
+  .section { break-inside: avoid; }
+}

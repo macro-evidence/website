@@ -1,0 +1,110 @@
+/* Inner-page hero: genuine theme-following surface, no decorative geometry. */
+.page-hero {
+  padding-block: clamp(3.75rem, 6vw, 5.5rem);
+  background: var(--page-bg);
+  color: var(--page-text);
+  border-bottom: 1px solid var(--subtle);
+}
+
+.page-hero .kicker {
+  margin-bottom: 1rem;
+  color: var(--accent-text);
+}
+
+.page-hero h1 {
+  max-width: 15ch;
+}
+
+.page-hero .lead { max-width: 62ch; }
+.page-hero .secondary-action { color: var(--page-text); }
+
+/* Shared interior systems */
+.relationship-section {
+  background: var(--surface-soft);
+  color: var(--page-text);
+}
+
+.relationship-section h2, .relationship-section h3 { color: var(--page-text); }
+.relationship-section .section-intro, .relationship-section .eyebrow { color: var(--muted); }
+
+.policy-page .reading { max-width: var(--reading); }
+.policy-page section + section { margin-top: 3rem; }
+.definition-grid { margin-top: 2rem; }
+.definition-card .micro-label { margin: 0; }
+
+.definition-card {
+  padding: 1.4rem;
+  border: 1px solid var(--subtle);
+  border-top: 3px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.definition-card .question {
+  display: block;
+  margin: 0.45rem 0 0.75rem;
+  font-size: clamp(1.35rem, 2vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+.definition-card p { color: var(--muted); }
+
+.criteria-list {
+  display: grid;
+  gap: 0;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--subtle-strong);
+}
+
+.criteria-list li {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--subtle);
+}
+.criteria-list strong { font-size: 1.04rem; }
+
+.quote-block {
+  margin: 0;
+  padding: clamp(1.3rem, 3vw, 1.9rem);
+  border-left: 4px solid var(--color-primary);
+  background: var(--surface);
+  font-size: clamp(1.18rem, 2vw, 1.55rem);
+  line-height: 1.48;
+  letter-spacing: -0.018em;
+}
+
+.identity-panel, .contact-path {
+  padding: 1.35rem;
+  border: 1px solid var(--subtle);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.identity-panel ul { margin-bottom: 0; }
+.contact-path p { color: var(--muted); }
+.mt-3 { margin-top: 3rem; }
+
+.founder-note { margin-top: 1.75rem; }
+
+.reference-context {
+  margin-top: 1.25rem;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.reference-context + .reference-links {
+  margin-top: 0.65rem;
+}
+
+.reference-links {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 1.25rem;
+}
+
+.reference-links a {
+  width: fit-content;
+}

@@ -1,0 +1,16 @@
+---
+interface Props {
+  title: string;
+  lead: string;
+  kicker?: string;
+}
+const { title, lead, kicker = 'Macro Evidence' } = Astro.props;
+---
+<section class="page-hero">
+  <div class="site-container">
+    <span class="kicker">{kicker}</span>
+    <h1>{title}</h1>
+    <p class="lead">{lead}</p>
+    <slot />
+  </div>
+</section>

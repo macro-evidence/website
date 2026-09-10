@@ -1,0 +1,337 @@
+---
+import ThemeControl from './ThemeControl.astro';
+
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const current = (href: string) => href.startsWith('/') && (pathname === href || pathname.startsWith(`${href}/`));
+const firstPublicationYear = 2026;
+const buildYear = new Date().getUTCFullYear();
+if (buildYear < firstPublicationYear) throw new Error(`Build year ${buildYear} predates the website's first-publication year.`);
+const copyrightYears = buildYear === firstPublicationYear ? `${firstPublicationYear}` : `${firstPublicationYear}–${buildYear}`;
+
+const groups = [
+  {
+    label: 'Explore',
+    links: [
+      { href: '/software', label: 'Software' },
+      { href: '/about', label: 'About' },
+      { href: '/principles', label: 'Principles' },
+      { href: '/governance', label: 'Governance' },
+    ],
+  },
+  {
+    label: 'Participate',
+    links: [
+      { href: '/contribute', label: 'Contribute' },
+      { href: '/contact', label: 'Contact' },
+      { href: '/sponsor', label: 'Sponsor' },
+    ],
+  },
+  {
+    label: 'Trust',
+    links: [
+      { href: '/privacy', label: 'Privacy' },
+      { href: '/security', label: 'Security' },
+      { href: '/trademarks', label: 'Trademarks' },
+      { href: '/licensing', label: 'Licensing' },
+      { href: '/brand-assets', label: 'Brand assets' },
+    ],
+  },
+  {
+    label: 'Connect',
+    links: [
+      { href: 'https://github.com/macro-evidence', label: 'GitHub' },
+      { href: 'https://www.linkedin.com/company/macro-evidence', label: 'LinkedIn' },
+      { href: 'https://www.youtube.com/@macro-evidence', label: 'YouTube' },
+      { href: 'https://bsky.app/profile/macro-evidence.com', label: 'Bluesky' },
+    ],
+  },
+];
+---
+<footer
+  class="site-footer"
+  itemscope
+  itemtype="https://schema.org/Organization"
+  itemid="https://macro-evidence.com/#organization"
+>
+  <meta itemprop="name" content="Macro Evidence" />
+  <link itemprop="url" href="https://macro-evidence.com/" />
+  <link itemprop="logo" href="https://macro-evidence.com/web-app-icon-512x512.png" />
+  <link itemprop="sameAs" href="https://github.com/macro-evidence" />
+  <link itemprop="sameAs" href="https://www.linkedin.com/company/macro-evidence" />
+  <link itemprop="sameAs" href="https://www.youtube.com/@macro-evidence" />
+  <link itemprop="sameAs" href="https://bsky.app/profile/macro-evidence.com" />
+
+  <div class="site-container footer-desktop">
+    <div class="footer-mark-wrap">
+      <a class="footer-mark" href="/" aria-label="Macro Evidence home">
+        <img
+          src="/assets/brand/macro-evidence_mark-white_v1.svg"
+          width="512"
+          height="512"
+          alt=""
+          aria-hidden="true"
+          decoding="async"
+        />
+      </a>
+    </div>
+
+    {groups.map((group) => (
+      <nav aria-label={`${group.label} footer navigation`}>
+        <h2>{group.label}</h2>
+        {group.links.map((item) => (
+          <a href={item.href} aria-current={current(item.href) ? 'page' : undefined}>{item.label}</a>
+        ))}
+      </nav>
+    ))}
+  </div>
+
+  <div class="site-container footer-compact">
+    <a class="footer-mark" href="/" aria-label="Macro Evidence home">
+      <img
+        src="/assets/brand/macro-evidence_mark-white_v1.svg"
+        width="512"
+        height="512"
+        alt=""
+        aria-hidden="true"
+        decoding="async"
+      />
+    </a>
+
+    <div class="footer-disclosures">
+      {groups.map((group) => (
+        <details>
+          <summary>
+            <span>{group.label}</span>
+            <svg
+              class="disclosure-chevron"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m6 3.5 4.5 4.5L6 12.5"></path>
+            </svg>
+          </summary>
+          <nav aria-label={`${group.label} footer navigation`}>
+            {group.links.map((item) => (
+              <a href={item.href} aria-current={current(item.href) ? 'page' : undefined}>{item.label}</a>
+            ))}
+          </nav>
+        </details>
+      ))}
+    </div>
+  </div>
+
+  <div class="site-container footer-base">
+    <p>© {copyrightYears} Macro Evidence</p>
+    <div class="footer-theme"><ThemeControl /></div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    padding-block: 3rem 1.25rem;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  .footer-desktop {
+    display: none;
+  }
+
+  .footer-compact {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .footer-mark {
+    width: 4.75rem;
+    min-height: 4.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  .footer-mark img {
+    width: 100%;
+    height: auto;
+  }
+
+  .footer-disclosures {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .footer-disclosures details {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .footer-disclosures summary {
+    min-height: 3.15rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-inline: 0.5rem;
+    cursor: pointer;
+    list-style: none;
+    border-radius: 0.45rem;
+    color: rgba(248, 250, 252, 0.78);
+    font-size: 0.78rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .footer-disclosures summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .disclosure-chevron {
+    flex: 0 0 auto;
+    transition: transform 150ms ease;
+  }
+
+  .footer-disclosures details[open] .disclosure-chevron {
+    transform: rotate(90deg);
+  }
+
+  .footer-disclosures nav {
+    display: grid;
+    padding: 0 0.5rem 0.8rem;
+  }
+
+  .footer-disclosures nav a,
+  .footer-desktop nav a {
+    text-decoration: none;
+  }
+
+  .footer-disclosures nav a {
+    min-height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .footer-disclosures nav a[aria-current="page"],
+  .footer-desktop nav a[aria-current="page"] {
+    font-weight: 750;
+    text-decoration: underline;
+    text-decoration-thickness: 0.1em;
+    text-underline-offset: 0.18em;
+  }
+
+  .footer-base {
+    margin-top: 2.1rem;
+    padding-top: 0.4rem;
+    color: rgba(248, 250, 252, 0.78);
+    font-size: 0.88rem;
+  }
+
+  .footer-base p {
+    margin: 0;
+  }
+
+  .footer-theme {
+    display: none;
+  }
+
+  .site-footer a:focus-visible,
+  .site-footer summary:focus-visible {
+    outline-color: var(--color-white);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .footer-disclosures summary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--color-white);
+    }
+
+    .footer-disclosures nav a:hover,
+    .footer-desktop nav a:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 0.1em;
+      text-underline-offset: 0.18em;
+    }
+  }
+
+  @media (min-width: 40rem) and (max-width: 71.99rem) {
+    .footer-mark {
+      width: 5.25rem;
+      min-height: 5.25rem;
+    }
+
+    .footer-disclosures {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem 2rem;
+    }
+  }
+
+  @media (min-width: 72rem) {
+    .site-footer {
+      padding-top: 3.4rem;
+    }
+
+    .footer-compact {
+      display: none;
+    }
+
+    .footer-desktop {
+      display: grid;
+      grid-template-columns: minmax(7rem, 1.15fr) repeat(4, minmax(8rem, 0.82fr));
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: start;
+      padding-bottom: 2.6rem;
+    }
+
+    .footer-mark-wrap {
+      padding-top: 0.1rem;
+    }
+
+    .footer-mark {
+      width: 6.25rem;
+      min-height: 6.25rem;
+    }
+
+    .footer-desktop nav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.18rem;
+    }
+
+    .footer-desktop h2 {
+      margin-bottom: 0.6rem;
+      color: rgba(248, 250, 252, 0.78);
+      font-size: 0.74rem;
+      line-height: 1.2;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .footer-desktop nav a {
+      min-height: 2.35rem;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .footer-base {
+      margin-top: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .footer-theme {
+      display: block;
+      width: 11.5rem;
+    }
+  }
+</style>

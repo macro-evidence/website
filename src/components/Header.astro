@@ -1,0 +1,273 @@
+---
+import ThemeControl from './ThemeControl.astro';
+
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const primary = [
+  { href: '/software', label: 'Software' },
+  { href: '/about', label: 'About' },
+  { href: '/governance', label: 'Governance' },
+  { href: '/contribute', label: 'Contribute' },
+];
+const current = (href: string) => href.startsWith('/') && (pathname === href || pathname.startsWith(`${href}/`));
+---
+<header class="site-header">
+  <div class="site-container header-inner">
+    <a class="brand" href="/" aria-label="Macro Evidence home">
+      <img
+        src="/assets/brand/macro-evidence_lockup-horizontal-white_v1.svg"
+        width="2476"
+        height="737"
+        alt=""
+        aria-hidden="true"
+        decoding="sync"
+        fetchpriority="high"
+      />
+    </a>
+
+    <div class="desktop-cluster">
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        {primary.map((item) => (
+          <a href={item.href} aria-current={current(item.href) ? 'page' : undefined}>{item.label}</a>
+        ))}
+        <a href="/sponsor" aria-current={current('/sponsor') ? 'page' : undefined}>Sponsor</a>
+      </nav>
+      <a class="contact-action" href="/contact" aria-current={current('/contact') ? 'page' : undefined}>Contact</a>
+    </div>
+
+    <details class="compact-menu">
+      <summary>
+        <span class="menu-state menu-state-open">
+          <span>Menu</span>
+          <svg
+            class="menu-icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            aria-hidden="true"
+          >
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </span>
+        <span class="menu-state menu-state-close">
+          <span>Close</span>
+          <svg
+            class="menu-icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            aria-hidden="true"
+          >
+            <line x1="5" y1="5" x2="19" y2="19"></line>
+            <line x1="19" y1="5" x2="5" y2="19"></line>
+          </svg>
+        </span>
+      </summary>
+      <div class="compact-panel">
+        <nav aria-label="Compact navigation">
+          {primary.map((item) => (
+            <a href={item.href} aria-current={current(item.href) ? 'page' : undefined}>{item.label}</a>
+          ))}
+          <a href="/contact" aria-current={current('/contact') ? 'page' : undefined}>Contact</a>
+          <a href="/sponsor" aria-current={current('/sponsor') ? 'page' : undefined}>Sponsor</a>
+        </nav>
+        <ThemeControl mode="inline" />
+      </div>
+    </details>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .header-inner {
+    position: relative;
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+  }
+
+  .brand {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .brand img {
+    display: block;
+    width: clamp(10.75rem, 18vw, 16rem);
+    height: auto;
+  }
+
+  .desktop-cluster { display: none; align-items: center; gap: 0.9rem; }
+
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.8rem, 1.5vw, 1.35rem);
+    font-size: 0.95rem;
+    font-weight: 650;
+  }
+
+  .desktop-nav a {
+    position: relative;
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .desktop-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.3rem;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 180ms ease;
+  }
+
+  .desktop-nav a[aria-current="page"]::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .desktop-nav a[aria-current="page"] {
+    font-weight: 750;
+  }
+
+  .contact-action {
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 0.95rem;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 999px;
+    background: var(--color-white);
+    color: var(--color-primary);
+    font-weight: 700;
+    line-height: 1.15;
+    text-decoration: none;
+    transition: box-shadow 160ms ease;
+  }
+
+  .compact-menu { position: static; }
+
+  .compact-menu summary {
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 0.65rem;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    border-radius: 0.55rem;
+    background: transparent;
+    color: var(--color-white);
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.15;
+    list-style: none;
+    transition: background-color 150ms ease, border-color 150ms ease;
+  }
+
+  .compact-menu[open] summary {
+    border-color: rgba(255, 255, 255, 0.48);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .desktop-nav a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .contact-action:hover {
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.28), 0 0.5rem 1.5rem rgba(5, 8, 22, 0.16);
+    }
+
+    .compact-menu summary:hover,
+    .compact-panel nav a:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--color-white);
+    }
+
+    .compact-menu summary:hover {
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  .compact-menu summary::-webkit-details-marker { display: none; }
+  .menu-state { align-items: center; gap: 0.35rem; }
+  .menu-state-open { display: inline-flex; }
+  .menu-state-close { display: none; }
+  .menu-icon { flex: 0 0 auto; }
+  .compact-menu[open] .menu-state-open { display: none; }
+  .compact-menu[open] .menu-state-close { display: inline-flex; }
+
+  .compact-panel {
+    position: absolute;
+    z-index: 20;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    width: min(13.5rem, calc(100vw - 2rem));
+    padding: 0.65rem 0.95rem 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.9rem;
+    background: var(--color-primary-deep);
+    box-shadow: 0 1.2rem 3rem rgba(5, 8, 22, 0.28);
+  }
+
+  .compact-panel nav { margin-bottom: 0; }
+
+  .compact-panel nav a {
+    width: 100%;
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-inline: 0.5rem;
+    border-radius: 0.4rem;
+    text-decoration: none;
+  }
+
+  .compact-panel nav a:last-child { border-bottom: 0; }
+  .compact-panel nav a[aria-current="page"] {
+    background: rgba(255, 255, 255, 0.06);
+    font-weight: 750;
+    text-decoration: underline;
+    text-decoration-thickness: 0.1em;
+    text-underline-offset: 0.18em;
+  }
+
+  .site-header a:focus-visible,
+  .site-header summary:focus-visible { outline-color: var(--color-white); }
+
+  @media (min-width: 72rem) {
+    .header-inner { min-height: 6.25rem; }
+    .desktop-cluster { display: flex; }
+    .compact-menu { display: none; }
+  }
+</style>

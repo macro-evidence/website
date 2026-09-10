@@ -1,0 +1,176 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PublicRecordCard from '../components/PublicRecordCard.astro';
+---
+<Layout
+  title="Macro Evidence | Open Infrastructure for Macroeconomic Evidence."
+  description="Macro Evidence builds open macroeconomic data infrastructure around provenance, validation, reproducibility, transparent limitations, and public governance."
+>
+  <section class="home-hero">
+    <div class="site-container home-hero-inner">
+      <div class="home-hero-copy">
+        <h1>Open Infrastructure for Macroeconomic Evidence.</h1>
+        <p class="lead">
+          We build open macroeconomic data infrastructure around provenance, validation, reproducibility, and
+          transparency. Macro Data Observatory (MDO) is our flagship and foundational platform.
+        </p>
+        <div class="hero-actions">
+          <a class="primary-action" href="/software">Explore software</a>
+          <a class="secondary-action" href="/about">About us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section premise-section">
+    <div class="site-container">
+      <div class="section-lead-grid">
+        <div>
+          <span class="eyebrow">How we work</span>
+          <h2>Evidence is more useful when its path stays visible.</h2>
+        </div>
+        <div class="reading">
+          <p class="section-intro">
+            We treat provenance, validation, reproducibility, maintainability, and transparent limitations as
+            engineering requirements. The goal is practical: make the work easier to inspect, reproduce, and improve.
+          </p>
+          <a class="text-link" href="/principles">Read how we work →</a>
+        </div>
+      </div>
+
+      <div class="principle-grid mt-3">
+        <article class="principle-card">
+          <span class="question">Where did it come from?</span>
+          <h3>Provenance</h3>
+          <p>Keep source identity and lineage represented or documented to the depth the system actually implements.</p>
+        </article>
+        <article class="principle-card">
+          <span class="question">What rules did it pass?</span>
+          <h3>Validation</h3>
+          <p>Make checks explicit without turning documented rules into claims of broader methodological assurance.</p>
+        </article>
+        <article class="principle-card">
+          <span class="question">Can it be recreated?</span>
+          <h3>Reproducibility</h3>
+          <p>
+            Document pipelines, configuration, and transformation logic so results do not depend on hidden manual
+            judgment.
+          </p>
+        </article>
+        <article class="principle-card">
+          <span class="question">What are the limits?</span>
+          <h3>Transparency</h3>
+          <p>
+            State relevant methodology, decisions, and material limitations plainly instead of letting confidence
+            outrun evidence.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section foundation-section">
+    <div class="site-container foundation-grid">
+      <div class="foundation-copy">
+        <span class="eyebrow">Our shared foundation</span>
+        <h2>Macro Evidence sets the direction. MDO turns it into working infrastructure.</h2>
+        <p class="section-intro">
+          Macro Evidence is the organization: mission, stewardship, governance, standards, and the broader software
+          direction. Macro Data Observatory is the flagship and foundational platform where that direction becomes
+          macroeconomic-data infrastructure.
+        </p>
+      </div>
+
+      <article class="platform-feature">
+        <span class="micro-label">Flagship and foundational platform</span>
+        <h3>Macro Data Observatory</h3>
+        <p>
+          Open-source data infrastructure for acquiring, validating, structuring, and maintaining macroeconomic data
+          from authoritative public sources through engineered, reproducible pipelines.
+        </p>
+        <div class="platform-status">
+          <span>Status</span>
+          <strong>Under active development.</strong>
+        </div>
+        <div class="action-row">
+          <a class="primary-action" href="https://github.com/macro-evidence/macro-data-observatory">
+            Open MDO on GitHub
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section records-section">
+    <div class="site-container">
+      <div class="section-lead-grid">
+        <div>
+          <span class="eyebrow">Public record</span>
+          <h2>You should not have to take our word for it.</h2>
+        </div>
+        <div class="reading">
+          <p class="section-intro">
+            Our mission, decision process, documentation standards, and other institutional records are public and
+            versioned. The website provides the context; the canonical records remain with the public repositories on
+            GitHub that own them.
+          </p>
+          <p class="institutional-line">Audit the evidence. Decide what to trust.</p>
+        </div>
+      </div>
+
+      <div class="record-grid mt-3">
+        <PublicRecordCard
+          kicker="Direction"
+          title="Organization & Platform Charter"
+          description="Our mission, vision, organization/platform scope, and durable direction."
+          href="https://github.com/macro-evidence/governance/blob/main/ORGANIZATION_CHARTER.md"
+          linkLabel="Read Organization & Platform Charter"
+        />
+        <PublicRecordCard
+          kicker="Decisions"
+          title="Governance & Decision-Making Charter"
+          description="How consequential organization-wide decisions are evaluated, recorded, and approved."
+          href="https://github.com/macro-evidence/governance/blob/main/GOVERNANCE.md"
+          linkLabel="Read Governance & Decision-Making Charter"
+        />
+        <PublicRecordCard
+          kicker="Standards"
+          title="Documentation Standards"
+          description="How documentation ownership, writing, naming, versioning, and commit conventions are maintained."
+          href="https://github.com/macro-evidence/governance/blob/main/DOCUMENTATION_STANDARDS.md"
+          linkLabel="Read Documentation Standards"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section engage-band">
+    <div class="site-container">
+      <div class="engage-intro">
+        <span class="eyebrow">Take part</span>
+        <h2>Build with us. Ask questions. Support the work.</h2>
+        <p class="section-intro">
+          Whether you want to contribute, start a conversation, or help sustain the infrastructure, there is a clear
+          place to begin.
+        </p>
+      </div>
+      <div class="path-grid">
+        <article class="path-card">
+          <h3>Contribute</h3>
+          <p>Help improve our software, documentation, and public infrastructure.</p>
+          <a href="/contribute">Contribute →</a>
+        </article>
+        <article class="path-card">
+          <h3>Contact</h3>
+          <p>Start a conversation about the work, collaboration, or an institutional question.</p>
+          <a href="/contact">Get in touch →</a>
+        </article>
+        <article class="path-card">
+          <h3>Sponsor</h3>
+          <p>Help sustain the open infrastructure and ongoing engineering behind it.</p>
+          <a href="/sponsor">Support the work →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+</Layout>

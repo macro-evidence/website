@@ -1,0 +1,51 @@
+/* Shared utility and public-resource systems. */
+.policy-reading-wide { max-width: 74ch !important; }
+
+.asset-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.asset-card {
+  overflow: hidden;
+  border: 1px solid var(--subtle);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.asset-preview {
+  min-height: 15rem;
+  display: grid;
+  place-items: center;
+  padding: clamp(2rem, 5vw, 4rem);
+  border-bottom: 1px solid var(--subtle);
+}
+
+.asset-preview-light { background: #ffffff; }
+.asset-preview-blue { background: var(--color-primary); }
+.asset-preview img { width: min(10rem, 55%); max-height: 8rem; }
+.asset-preview-lockup img { width: min(28rem, 86%); max-height: 7rem; }
+
+.asset-copy { padding: 1.2rem 1.25rem 1.35rem; }
+.asset-copy p { color: var(--muted); }
+.asset-links { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1rem; }
+.asset-links a { font-weight: 750; }
+
+.not-found-page {
+  min-height: clamp(28rem, 58vh, 38rem);
+  display: flex;
+  align-items: center;
+}
+
+.not-found-page .page-hero {
+  width: 100%;
+  border-bottom: 0;
+}
+
+@media (min-width: 40rem) {
+  .asset-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 60rem) {
+  .asset-grid-variants { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

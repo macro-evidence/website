@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageIntro from '../components/PageIntro.astro';
+---
+<Layout
+  title="Page not found | Macro Evidence"
+  description="The requested Macro Evidence page could not be found."
+  noindex={true}
+  canonicalPath="/404"
+>
+  <div class="not-found-page">
+    <PageIntro
+      kicker="404"
+      title="Page not found"
+      lead="The page may have moved, or the address may be incorrect."
+    >
+      <div class="hero-actions">
+        <a class="primary-action" href="/">Return home</a>
+      </div>
+    </PageIntro>
+  </div>
+</Layout>

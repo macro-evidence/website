@@ -1,0 +1,57 @@
+.primary-action, .secondary-action {
+  min-height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.78rem 1.1rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-weight: 700;
+  line-height: 1.15;
+  text-decoration: none;
+  transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.primary-action {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.secondary-action {
+  border-color: var(--control-border);
+  background: transparent;
+  color: var(--page-text);
+}
+
+
+.text-link { font-weight: 700; }
+.action-row, .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.65rem;
+}
+
+.section {
+  position: relative;
+  padding-block: var(--section-space);
+}
+
+.section + .section { border-top: 1px solid var(--subtle); }
+.section-intro, .lead {
+  max-width: 62ch;
+  color: var(--muted);
+  font-size: clamp(1.06rem, 1.7vw, 1.25rem);
+  line-height: 1.6;
+}
+
+.split, .section-lead-grid, .foundation-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.card-grid, .record-grid, .path-grid, .principle-grid, .definition-grid, .contact-grid, .identity-grid {
+  display: grid;
+  gap: 1rem;
+}
