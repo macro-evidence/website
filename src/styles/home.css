@@ -16,7 +16,6 @@
   max-width: 67rem;
 }
 
-
 .home-hero h1 {
   max-width: 12.5ch;
 }
@@ -26,7 +25,9 @@
   font-size: clamp(1.15rem, 2vw, 1.4rem);
 }
 
-.premise-section { background: var(--page-bg); }
+.premise-section {
+  background: var(--page-bg);
+}
 
 .principle-card {
   padding: 1.4rem 1.35rem 1.5rem;
@@ -45,10 +46,16 @@
   letter-spacing: -0.018em;
 }
 
-.principle-card p { color: var(--muted); }
+.principle-card p {
+  color: var(--muted);
+}
 
-.foundation-section { background: var(--surface-soft); }
-.foundation-copy { align-self: center; }
+.foundation-section {
+  background: var(--surface-soft);
+}
+.foundation-copy {
+  align-self: center;
+}
 
 .platform-feature {
   padding: clamp(1.5rem, 3vw, 2.2rem);
@@ -82,9 +89,13 @@
   border-top: 1px solid var(--subtle);
 }
 
-.platform-status span { color: var(--muted); }
+.platform-status span {
+  color: var(--muted);
+}
 
-.records-section { background: var(--page-bg); }
+.records-section {
+  background: var(--page-bg);
+}
 
 .record-card {
   display: flex;
@@ -95,8 +106,13 @@
   background: var(--surface);
 }
 
-.record-card h3 { margin-top: 1.2rem; margin-bottom: 0.65rem; }
-.record-card p { color: var(--muted); }
+.record-card h3 {
+  margin-top: 1.2rem;
+  margin-bottom: 0.65rem;
+}
+.record-card p {
+  color: var(--muted);
+}
 .record-card .record-link {
   margin-top: auto;
   padding-top: 1.15rem;
@@ -115,15 +131,28 @@
   color: var(--page-text);
 }
 
-.engage-band h2, .engage-band h3 { color: var(--page-text); }
-.engage-band .section-intro { color: var(--muted); }
-.engage-intro { max-width: 56rem; }
-.path-grid { margin-top: 2.25rem; }
+.engage-band h2,
+.engage-band h3 {
+  color: var(--page-text);
+}
+.engage-band .section-intro {
+  color: var(--muted);
+}
+.engage-intro {
+  max-width: 56rem;
+}
+.path-grid {
+  margin-top: 2.25rem;
+}
 
 .path-card {
   padding: 1.15rem 0;
   border-top: 1px solid var(--subtle-strong);
 }
 
-.path-card p { color: var(--muted); }
-.path-card a { font-weight: 750; }
+.path-card p {
+  color: var(--muted);
+}
+.path-card a {
+  font-weight: 750;
+}

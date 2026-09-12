@@ -1,11 +1,23 @@
 @media (min-width: 37.5rem) {
-  .site-container { width: min(100% - 3rem, var(--container)); }
-  .principle-grid, .record-grid, .contact-grid, .definition-grid, .identity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .path-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .site-container {
+    width: min(100% - 3rem, var(--container));
+  }
+  .principle-grid,
+  .record-grid,
+  .contact-grid,
+  .definition-grid,
+  .identity-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .path-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 60rem) {
-  .site-container { width: min(100% - 4rem, var(--container)); }
+  .site-container {
+    width: min(100% - 4rem, var(--container));
+  }
 
   .section-lead-grid {
     grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
@@ -24,12 +36,24 @@
     gap: clamp(3rem, 7vw, 6rem);
   }
 
-  .principle-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .record-grid, .boundary-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .principle-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .record-grid,
+  .boundary-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 30rem) {
-  .home-hero h1, .page-hero h1 { font-size: clamp(2.45rem, 12vw, 4rem); }
-  .home-hero-inner { min-height: auto; }
-  .section { padding-block: 3.4rem; }
+  .home-hero h1,
+  .page-hero h1 {
+    font-size: clamp(2.45rem, 12vw, 4rem);
+  }
+  .home-hero-inner {
+    min-height: auto;
+  }
+  .section {
+    padding-block: 3.4rem;
+  }
 }

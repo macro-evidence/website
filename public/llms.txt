@@ -1,0 +1,42 @@
+# Macro Evidence
+
+> Macro Evidence is a software organization building open macroeconomic data infrastructure.
+
+Macro Evidence builds open macroeconomic data infrastructure designed around provenance, validation, reproducibility, and transparency. Macro Data Observatory (MDO) is its flagship and foundational platform and is under active development.
+
+Canonical website: https://macro-evidence.com/
+
+## Start here
+
+- [Software](https://macro-evidence.com/software): Current software scope and the Macro Evidence–MDO relationship.
+- [About](https://macro-evidence.com/about): Organization mission, identity, and stewardship posture.
+- [Principles](https://macro-evidence.com/principles): Engineering and decision principles used in the work.
+- [Contribute](https://macro-evidence.com/contribute): Contribution orientation and links to canonical contributor policy.
+
+## Canonical public records
+
+- [Organization & Platform Charter](https://github.com/macro-evidence/governance/blob/main/ORGANIZATION_CHARTER.md): Mission, vision, organization/platform scope, and durable direction.
+- [Governance & Decision-Making Charter](https://github.com/macro-evidence/governance/blob/main/GOVERNANCE.md): Decision criteria, review, and Architecture Decision Records.
+- [Documentation Standards](https://github.com/macro-evidence/governance/blob/main/DOCUMENTATION_STANDARDS.md): Documentation ownership, writing, formatting, naming, and commit conventions.
+- [Contribution Policy](https://github.com/macro-evidence/governance/blob/main/CONTRIBUTION_POLICY.md): Organization-wide participation, acceptance, contributor-rights, and stewardship policy.
+- [Trademarks Policy](https://github.com/macro-evidence/governance/blob/main/TRADEMARKS.md): Name, mark, and visual-identity use policy.
+- [Security Policy](https://github.com/macro-evidence/.github/blob/main/SECURITY.md): Canonical vulnerability-reporting policy.
+
+## Software and source
+
+- [Macro Data Observatory](https://github.com/macro-evidence/macro-data-observatory): Flagship and foundational open-source macroeconomic data infrastructure; under active development.
+- [Macro Evidence on GitHub](https://github.com/macro-evidence): Public repositories and source history.
+- [Website source](https://github.com/macro-evidence/website): Source and verification system for the official organization website.
+
+## Official organization profiles
+
+- [LinkedIn](https://www.linkedin.com/company/macro-evidence)
+- [YouTube](https://www.youtube.com/@macro-evidence)
+- [Bluesky](https://bsky.app/profile/macro-evidence.com)
+
+## Optional
+
+- [Brand assets](https://macro-evidence.com/brand-assets): Official public-distribution identity assets and use guidance.
+- [Licensing](https://macro-evidence.com/licensing): Source, content, identity, and third-party rights boundaries.
+- [Privacy](https://macro-evidence.com/privacy): Website-specific data-handling orientation.
+- [Security](https://macro-evidence.com/security): First-party security-reporting orientation.

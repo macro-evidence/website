@@ -6,7 +6,9 @@
   function storedPreference() {
     try {
       const value = localStorage.getItem(key);
-      return value === 'light' || value === 'dark' || value === 'system' ? value : 'system';
+      return value === 'light' || value === 'dark' || value === 'system'
+        ? value
+        : 'system';
     } catch {
       return 'system';
     }
@@ -19,7 +21,10 @@
 
   function updateButtons(preference) {
     document.querySelectorAll('[data-theme-choice]').forEach((button) => {
-      button.setAttribute('aria-pressed', String(button.dataset.themeChoice === preference));
+      button.setAttribute(
+        'aria-pressed',
+        String(button.dataset.themeChoice === preference),
+      );
     });
   }
 
@@ -30,7 +35,11 @@
   }
 
   function save(preference) {
-    try { localStorage.setItem(key, preference); } catch {}
+    try {
+      localStorage.setItem(key, preference);
+    } catch {
+      // Theme application must continue when persistent storage is unavailable.
+    }
     apply(preference);
   }
 

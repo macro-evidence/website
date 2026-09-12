@@ -1,4 +1,8 @@
-*, *::before, *::after { box-sizing: border-box; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 html {
   background: var(--page-bg);
@@ -16,7 +20,12 @@ body {
   line-height: 1.65;
 }
 
-img, picture, svg { display: block; max-width: 100%; }
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
 
 a {
   color: inherit;
@@ -25,42 +34,55 @@ a {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  a:hover { text-decoration-thickness: 0.12em; }
+  a:hover {
+    text-decoration-thickness: 0.12em;
+  }
 }
 
 /* Firefox's opaque light-theme selection can obscure tightly set display glyphs when adjacent line boxes overlap.
    Main content therefore keeps a translucent selection with the originating foreground. Fixed brand-blue chrome
    uses a stronger light selection pair so selected navigation and Theme text remain visibly selected. */
 @media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) .site-main ::selection {
+  :root:not([data-theme='dark']) .site-main ::selection {
     background: rgb(23 63 99 / 20%);
     color: inherit;
   }
 
-  :root:not([data-theme="dark"]) :is(.site-header, .site-footer) ::selection {
+  :root:not([data-theme='dark']) :is(.site-header, .site-footer) ::selection {
     background: #bdcedc;
     color: var(--color-dark);
   }
 }
 
-:root[data-theme="light"] .site-main ::selection {
+:root[data-theme='light'] .site-main ::selection {
   background: rgb(23 63 99 / 20%);
   color: inherit;
 }
 
-:root[data-theme="light"] :is(.site-header, .site-footer) ::selection {
+:root[data-theme='light'] :is(.site-header, .site-footer) ::selection {
   background: #bdcedc;
   color: var(--color-dark);
 }
 
-a:focus-visible, summary:focus-visible {
+a:focus-visible,
+summary:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 4px;
 }
 
-h1, h2, h3, p, ul, ol, blockquote { margin-top: 0; }
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+blockquote {
+  margin-top: 0;
+}
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: var(--page-text);
   font-weight: 700;
   letter-spacing: -0.032em;
@@ -84,19 +106,37 @@ h3 {
   line-height: 1.22;
 }
 
-p, li { overflow-wrap: anywhere; }
-p:last-child, ul:last-child, ol:last-child, blockquote:last-child { margin-bottom: 0; }
-ul, ol { padding-left: 1.25rem; }
-strong { font-weight: 700; }
+p,
+li {
+  overflow-wrap: anywhere;
+}
+p:last-child,
+ul:last-child,
+ol:last-child,
+blockquote:last-child {
+  margin-bottom: 0;
+}
+ul,
+ol {
+  padding-left: 1.25rem;
+}
+strong {
+  font-weight: 700;
+}
 
 .site-container {
   width: min(100% - 2rem, var(--container));
   margin-inline: auto;
 }
 
-.reading { max-width: var(--reading); }
+.reading {
+  max-width: var(--reading);
+}
 
-.kicker, .eyebrow, .record-kicker, .micro-label {
+.kicker,
+.eyebrow,
+.record-kicker,
+.micro-label {
   display: block;
   color: var(--muted);
   font-size: 0.76rem;
@@ -119,5 +159,9 @@ strong { font-weight: 700; }
   font-weight: 700;
 }
 
-.skip-link:focus { transform: none; }
-.site-main { min-height: 60vh; }
+.skip-link:focus {
+  transform: none;
+}
+.site-main {
+  min-height: 60vh;
+}

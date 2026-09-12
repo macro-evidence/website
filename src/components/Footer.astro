@@ -2,11 +2,19 @@
 import ThemeControl from './ThemeControl.astro';
 
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
-const current = (href: string) => href.startsWith('/') && (pathname === href || pathname.startsWith(`${href}/`));
+const current = (href: string) =>
+  href.startsWith('/') &&
+  (pathname === href || pathname.startsWith(`${href}/`));
 const firstPublicationYear = 2026;
 const buildYear = new Date().getUTCFullYear();
-if (buildYear < firstPublicationYear) throw new Error(`Build year ${buildYear} predates the website's first-publication year.`);
-const copyrightYears = buildYear === firstPublicationYear ? `${firstPublicationYear}` : `${firstPublicationYear}–${buildYear}`;
+if (buildYear < firstPublicationYear)
+  throw new Error(
+    `Build year ${buildYear} predates the website's first-publication year.`,
+  );
+const copyrightYears =
+  buildYear === firstPublicationYear
+    ? `${firstPublicationYear}`
+    : `${firstPublicationYear}–${buildYear}`;
 
 const groups = [
   {
@@ -40,13 +48,17 @@ const groups = [
     label: 'Connect',
     links: [
       { href: 'https://github.com/macro-evidence', label: 'GitHub' },
-      { href: 'https://www.linkedin.com/company/macro-evidence', label: 'LinkedIn' },
+      {
+        href: 'https://www.linkedin.com/company/macro-evidence',
+        label: 'LinkedIn',
+      },
       { href: 'https://www.youtube.com/@macro-evidence', label: 'YouTube' },
       { href: 'https://bsky.app/profile/macro-evidence.com', label: 'Bluesky' },
     ],
   },
 ];
 ---
+
 <footer
   class="site-footer"
   itemscope
@@ -54,12 +66,26 @@ const groups = [
   itemid="https://macro-evidence.com/#organization"
 >
   <meta itemprop="name" content="Macro Evidence" />
+  <meta
+    itemprop="description"
+    content="Macro Evidence is a software organization building open macroeconomic data infrastructure."
+  />
   <link itemprop="url" href="https://macro-evidence.com/" />
-  <link itemprop="logo" href="https://macro-evidence.com/web-app-icon-512x512.png" />
+  <link
+    itemprop="logo"
+    href="https://macro-evidence.com/web-app-icon-512x512.png"
+  />
   <link itemprop="sameAs" href="https://github.com/macro-evidence" />
-  <link itemprop="sameAs" href="https://www.linkedin.com/company/macro-evidence" />
+  <link
+    itemprop="sameAs"
+    href="https://www.linkedin.com/company/macro-evidence"
+  />
   <link itemprop="sameAs" href="https://www.youtube.com/@macro-evidence" />
   <link itemprop="sameAs" href="https://bsky.app/profile/macro-evidence.com" />
+  <link
+    itemprop="sameAs"
+    href="https://www.crunchbase.com/organization/macro-evidence"
+  />
 
   <div class="site-container footer-desktop">
     <div class="footer-mark-wrap">
@@ -75,14 +101,21 @@ const groups = [
       </a>
     </div>
 
-    {groups.map((group) => (
-      <nav aria-label={`${group.label} footer navigation`}>
-        <h2>{group.label}</h2>
-        {group.links.map((item) => (
-          <a href={item.href} aria-current={current(item.href) ? 'page' : undefined}>{item.label}</a>
-        ))}
-      </nav>
-    ))}
+    {
+      groups.map((group) => (
+        <nav aria-label={`${group.label} footer navigation`}>
+          <h2>{group.label}</h2>
+          {group.links.map((item) => (
+            <a
+              href={item.href}
+              aria-current={current(item.href) ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      ))
+    }
   </div>
 
   <div class="site-container footer-compact">
@@ -98,32 +131,39 @@ const groups = [
     </a>
 
     <div class="footer-disclosures">
-      {groups.map((group) => (
-        <details>
-          <summary>
-            <span>{group.label}</span>
-            <svg
-              class="disclosure-chevron"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="m6 3.5 4.5 4.5L6 12.5"></path>
-            </svg>
-          </summary>
-          <nav aria-label={`${group.label} footer navigation`}>
-            {group.links.map((item) => (
-              <a href={item.href} aria-current={current(item.href) ? 'page' : undefined}>{item.label}</a>
-            ))}
-          </nav>
-        </details>
-      ))}
+      {
+        groups.map((group) => (
+          <details>
+            <summary>
+              <span>{group.label}</span>
+              <svg
+                class="disclosure-chevron"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m6 3.5 4.5 4.5L6 12.5" />
+              </svg>
+            </summary>
+            <nav aria-label={`${group.label} footer navigation`}>
+              {group.links.map((item) => (
+                <a
+                  href={item.href}
+                  aria-current={current(item.href) ? 'page' : undefined}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+          </details>
+        ))
+      }
     </div>
   </div>
 
@@ -219,8 +259,8 @@ const groups = [
     align-items: center;
   }
 
-  .footer-disclosures nav a[aria-current="page"],
-  .footer-desktop nav a[aria-current="page"] {
+  .footer-disclosures nav a[aria-current='page'],
+  .footer-desktop nav a[aria-current='page'] {
     font-weight: 750;
     text-decoration: underline;
     text-decoration-thickness: 0.1em;
@@ -284,7 +324,10 @@ const groups = [
 
     .footer-desktop {
       display: grid;
-      grid-template-columns: minmax(7rem, 1.15fr) repeat(4, minmax(8rem, 0.82fr));
+      grid-template-columns: minmax(7rem, 1.15fr) repeat(
+          4,
+          minmax(8rem, 0.82fr)
+        );
       gap: clamp(2rem, 4vw, 4rem);
       align-items: start;
       padding-bottom: 2.6rem;

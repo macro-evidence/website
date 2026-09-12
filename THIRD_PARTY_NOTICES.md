@@ -7,7 +7,7 @@ The Macro Evidence website uses third-party material under its applicable upstre
 Inter is distributed with the website as a first-party-served variable webfont. The build obtains the selected font asset from an exact-pinned package; browsers do not load Inter from a third-party font host.
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | Font | Inter |
 | Build package | `@fontsource-variable/inter@5.3.0` |
 | Package license | OFL-1.1 |

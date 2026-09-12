@@ -8,8 +8,11 @@ const primary = [
   { href: '/governance', label: 'Governance' },
   { href: '/contribute', label: 'Contribute' },
 ];
-const current = (href: string) => href.startsWith('/') && (pathname === href || pathname.startsWith(`${href}/`));
+const current = (href: string) =>
+  href.startsWith('/') &&
+  (pathname === href || pathname.startsWith(`${href}/`));
 ---
+
 <header class="site-header">
   <div class="site-container header-inner">
     <a class="brand" href="/" aria-label="Macro Evidence home">
@@ -26,12 +29,26 @@ const current = (href: string) => href.startsWith('/') && (pathname === href || 
 
     <div class="desktop-cluster">
       <nav class="desktop-nav" aria-label="Primary navigation">
-        {primary.map((item) => (
-          <a href={item.href} aria-current={current(item.href) ? 'page' : undefined}>{item.label}</a>
-        ))}
-        <a href="/sponsor" aria-current={current('/sponsor') ? 'page' : undefined}>Sponsor</a>
+        {
+          primary.map((item) => (
+            <a
+              href={item.href}
+              aria-current={current(item.href) ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+        <a
+          href="/sponsor"
+          aria-current={current('/sponsor') ? 'page' : undefined}>Sponsor</a
+        >
       </nav>
-      <a class="contact-action" href="/contact" aria-current={current('/contact') ? 'page' : undefined}>Contact</a>
+      <a
+        class="contact-action"
+        href="/contact"
+        aria-current={current('/contact') ? 'page' : undefined}>Contact</a
+      >
     </div>
 
     <details class="compact-menu">
@@ -74,11 +91,24 @@ const current = (href: string) => href.startsWith('/') && (pathname === href || 
       </summary>
       <div class="compact-panel">
         <nav aria-label="Compact navigation">
-          {primary.map((item) => (
-            <a href={item.href} aria-current={current(item.href) ? 'page' : undefined}>{item.label}</a>
-          ))}
-          <a href="/contact" aria-current={current('/contact') ? 'page' : undefined}>Contact</a>
-          <a href="/sponsor" aria-current={current('/sponsor') ? 'page' : undefined}>Sponsor</a>
+          {
+            primary.map((item) => (
+              <a
+                href={item.href}
+                aria-current={current(item.href) ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            ))
+          }
+          <a
+            href="/contact"
+            aria-current={current('/contact') ? 'page' : undefined}>Contact</a
+          >
+          <a
+            href="/sponsor"
+            aria-current={current('/sponsor') ? 'page' : undefined}>Sponsor</a
+          >
         </nav>
         <ThemeControl mode="inline" />
       </div>
@@ -118,7 +148,11 @@ const current = (href: string) => href.startsWith('/') && (pathname === href || 
     height: auto;
   }
 
-  .desktop-cluster { display: none; align-items: center; gap: 0.9rem; }
+  .desktop-cluster {
+    display: none;
+    align-items: center;
+    gap: 0.9rem;
+  }
 
   .desktop-nav {
     display: flex;
@@ -137,7 +171,7 @@ const current = (href: string) => href.startsWith('/') && (pathname === href || 
   }
 
   .desktop-nav a::after {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     right: 0;
@@ -149,12 +183,12 @@ const current = (href: string) => href.startsWith('/') && (pathname === href || 
     transition: transform 180ms ease;
   }
 
-  .desktop-nav a[aria-current="page"]::after {
+  .desktop-nav a[aria-current='page']::after {
     transform: scaleX(1);
     transform-origin: left;
   }
 
-  .desktop-nav a[aria-current="page"] {
+  .desktop-nav a[aria-current='page'] {
     font-weight: 750;
   }
 
@@ -173,7 +207,9 @@ const current = (href: string) => href.startsWith('/') && (pathname === href || 
     transition: box-shadow 160ms ease;
   }
 
-  .compact-menu { position: static; }
+  .compact-menu {
+    position: static;
+  }
 
   .compact-menu summary {
     min-height: 2.75rem;
@@ -190,7 +226,9 @@ const current = (href: string) => href.startsWith('/') && (pathname === href || 
     font-weight: 700;
     line-height: 1.15;
     list-style: none;
-    transition: background-color 150ms ease, border-color 150ms ease;
+    transition:
+      background-color 150ms ease,
+      border-color 150ms ease;
   }
 
   .compact-menu[open] summary {
@@ -205,7 +243,9 @@ const current = (href: string) => href.startsWith('/') && (pathname === href || 
     }
 
     .contact-action:hover {
-      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.28), 0 0.5rem 1.5rem rgba(5, 8, 22, 0.16);
+      box-shadow:
+        0 0 0 2px rgba(255, 255, 255, 0.28),
+        0 0.5rem 1.5rem rgba(5, 8, 22, 0.16);
     }
 
     .compact-menu summary:hover,
@@ -219,13 +259,28 @@ const current = (href: string) => href.startsWith('/') && (pathname === href || 
     }
   }
 
-  .compact-menu summary::-webkit-details-marker { display: none; }
-  .menu-state { align-items: center; gap: 0.35rem; }
-  .menu-state-open { display: inline-flex; }
-  .menu-state-close { display: none; }
-  .menu-icon { flex: 0 0 auto; }
-  .compact-menu[open] .menu-state-open { display: none; }
-  .compact-menu[open] .menu-state-close { display: inline-flex; }
+  .compact-menu summary::-webkit-details-marker {
+    display: none;
+  }
+  .menu-state {
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .menu-state-open {
+    display: inline-flex;
+  }
+  .menu-state-close {
+    display: none;
+  }
+  .menu-icon {
+    flex: 0 0 auto;
+  }
+  .compact-menu[open] .menu-state-open {
+    display: none;
+  }
+  .compact-menu[open] .menu-state-close {
+    display: inline-flex;
+  }
 
   .compact-panel {
     position: absolute;
@@ -240,7 +295,9 @@ const current = (href: string) => href.startsWith('/') && (pathname === href || 
     box-shadow: 0 1.2rem 3rem rgba(5, 8, 22, 0.28);
   }
 
-  .compact-panel nav { margin-bottom: 0; }
+  .compact-panel nav {
+    margin-bottom: 0;
+  }
 
   .compact-panel nav a {
     width: 100%;
@@ -253,8 +310,10 @@ const current = (href: string) => href.startsWith('/') && (pathname === href || 
     text-decoration: none;
   }
 
-  .compact-panel nav a:last-child { border-bottom: 0; }
-  .compact-panel nav a[aria-current="page"] {
+  .compact-panel nav a:last-child {
+    border-bottom: 0;
+  }
+  .compact-panel nav a[aria-current='page'] {
     background: rgba(255, 255, 255, 0.06);
     font-weight: 750;
     text-decoration: underline;
@@ -263,11 +322,19 @@ const current = (href: string) => href.startsWith('/') && (pathname === href || 
   }
 
   .site-header a:focus-visible,
-  .site-header summary:focus-visible { outline-color: var(--color-white); }
+  .site-header summary:focus-visible {
+    outline-color: var(--color-white);
+  }
 
   @media (min-width: 72rem) {
-    .header-inner { min-height: 6.25rem; }
-    .desktop-cluster { display: flex; }
-    .compact-menu { display: none; }
+    .header-inner {
+      min-height: 6.25rem;
+    }
+    .desktop-cluster {
+      display: flex;
+    }
+    .compact-menu {
+      display: none;
+    }
   }
 </style>

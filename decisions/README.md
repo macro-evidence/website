@@ -8,7 +8,7 @@ These are decisions specific to this repository. Decisions that genuinely apply 
 
 One file per decision: `NNNN-short-title.md`, numbered sequentially, using:
 
-```
+```markdown
 # NNNN. Short title
 
 **Status:** Proposed / Accepted / Superseded

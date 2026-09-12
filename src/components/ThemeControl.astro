@@ -5,6 +5,7 @@ interface Props {
 
 const { mode = 'popover' } = Astro.props;
 ---
+
 <details class:list={['theme-control', `theme-control-${mode}`]}>
   <summary>
     <span>Theme</span>
@@ -109,13 +110,13 @@ const { mode = 'popover' } = Astro.props;
     line-height: 1;
   }
 
-  .theme-options button[aria-pressed="true"] {
+  .theme-options button[aria-pressed='true'] {
     background: rgba(255, 255, 255, 0.06);
     color: var(--color-white);
     font-weight: 750;
   }
 
-  .theme-options button[aria-pressed="true"] .theme-check {
+  .theme-options button[aria-pressed='true'] .theme-check {
     visibility: visible;
   }
 
@@ -146,7 +147,9 @@ const { mode = 'popover' } = Astro.props;
     border: 1px solid rgba(255, 255, 255, 0.32);
     border-radius: 0.55rem;
     background: transparent;
-    transition: background-color 150ms ease, border-color 150ms ease;
+    transition:
+      background-color 150ms ease,
+      border-color 150ms ease;
   }
 
   .theme-control-popover[open] summary {

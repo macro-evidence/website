@@ -37,7 +37,7 @@ Root files define runtime, package, deployment, licensing, and repository-mainte
 
 The supported runtime baseline is:
 
-- Node.js **24.20.0** exactly
+- Node.js **24.21.0** exactly
 - npm **12.0.2** exactly
 
 Direct framework, compiler, build, and other package dependencies are exact-pinned in [`package.json`](package.json); [`package-lock.json`](package-lock.json) is the authoritative resolved dependency graph. Use `npm ci` for a clean reproducible install rather than independently selecting dependency versions. npm dependency install scripts are deny-by-default; reviewed exceptions are declared in `package.json`.
@@ -50,6 +50,16 @@ Install and start the development server:
 npm ci
 npm run dev
 ```
+
+Apply the repository's canonical code/configuration formatting and run the static lint gates:
+
+```sh
+npm run format
+npm run format:check
+npm run lint
+```
+
+Prettier owns executable/source/configuration formatting in the paths declared by `package.json`; it does **not** rewrite Markdown prose. Markdown is checked separately with the exact-pinned `markdownlint-cli2` dependency. This repository's Markdown lint baseline keeps the standard rules while disabling line-length enforcement so policy prose, tables, and durable URLs are not mechanically reflowed.
 
 Build production output:
 
@@ -81,6 +91,10 @@ The Content Security Policy permits the required first-party static resources wh
 
 Canonical source repositories are navigation destinations only, not build or runtime dependencies. The website does not maintain synchronized copies of canonical governance, contribution, security, or other policy records; that ownership boundary is recorded in [decision 0005](decisions/0005-keep-canonical-records-in-their-owning-repositories.md).
 
+The site publishes `/llms.txt` as a concise machine-oriented index of public first-party sources and declares it with `rel="describedby"`. This is a discovery aid, not a replacement for canonical records, search-engine metadata, or crawler controls. Schema.org `Organization` and `WebSite` metadata remain CSP-compatible microdata rather than inline JSON-LD so the strict no-inline-script boundary is preserved.
+
+`robots.txt` intentionally permits ordinary crawling and advertises the sitemap. Bad-bot mitigation is a live edge/security concern rather than a source-level attempt to distinguish trustworthy automation by user-agent text alone.
+
 The footer copyright range is derived from the UTC build year, so generated HTML may change when the calendar year changes even if source bytes do not.
 
 Responsive behavior is one fluid system with bounded breakpoints. The compact header/footer architecture remains active below `72rem`; the desktop header/footer architecture activates together at `72rem` and above.
@@ -90,7 +104,7 @@ Responsive behavior is one fluid system with bounded breakpoints. The compact he
 ## Routes
 
 | Route | Role |
-|---|---|
+| --- | --- |
 | `/` | Organization proposition, working principles, MDO relationship, public record, and participation |
 | `/software` | Software portfolio boundary and MDO relationship |
 | `/principles` | Engineering and decision principles |
@@ -124,10 +138,15 @@ Responsive behavior is one fluid system with bounded breakpoints. The compact he
 
 ## Verification and release
 
-The release path verifies repository/source constraints, frozen identity assets, Astro diagnostics, generated routes and metadata, internal link/resource integrity, security headers, first-party font delivery, licensing material, and the dependency audit.
+The release path verifies canonical code/configuration formatting, Markdown structure, repository/source constraints, frozen identity assets, Astro diagnostics, generated routes and metadata, internal link/resource integrity, security headers, first-party font delivery, licensing material, and the dependency audit.
 
 | Command | Responsibility |
-|---|---|
+| --- | --- |
+| `npm run format` | Apply the exact-pinned Prettier formatting baseline |
+| `npm run format:check` | Verify that source and configuration files match the canonical formatting baseline |
+| `npm run lint:code` | ESLint and Astro static-analysis rules for executable repository source |
+| `npm run lint:markdown` | Repository Markdown structure and hygiene checks |
+| `npm run lint` | Run both code and Markdown lint gates |
 | `npm run verify:source` | Repository/source constraints and durable architecture boundaries |
 | `npm run verify:assets` | Hash-pinned official identity assets |
 | `npm run copy:licenses` | Exact website and Inter license material carried into built output |

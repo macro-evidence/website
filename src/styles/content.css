@@ -15,8 +15,12 @@
   max-width: 15ch;
 }
 
-.page-hero .lead { max-width: 62ch; }
-.page-hero .secondary-action { color: var(--page-text); }
+.page-hero .lead {
+  max-width: 62ch;
+}
+.page-hero .secondary-action {
+  color: var(--page-text);
+}
 
 /* Shared interior systems */
 .relationship-section {
@@ -24,13 +28,27 @@
   color: var(--page-text);
 }
 
-.relationship-section h2, .relationship-section h3 { color: var(--page-text); }
-.relationship-section .section-intro, .relationship-section .eyebrow { color: var(--muted); }
+.relationship-section h2,
+.relationship-section h3 {
+  color: var(--page-text);
+}
+.relationship-section .section-intro,
+.relationship-section .eyebrow {
+  color: var(--muted);
+}
 
-.policy-page .reading { max-width: var(--reading); }
-.policy-page section + section { margin-top: 3rem; }
-.definition-grid { margin-top: 2rem; }
-.definition-card .micro-label { margin: 0; }
+.policy-page .reading {
+  max-width: var(--reading);
+}
+.policy-page section + section {
+  margin-top: 3rem;
+}
+.definition-grid {
+  margin-top: 2rem;
+}
+.definition-card .micro-label {
+  margin: 0;
+}
 
 .definition-card {
   padding: 1.4rem;
@@ -47,7 +65,9 @@
   font-weight: 700;
   letter-spacing: -0.025em;
 }
-.definition-card p { color: var(--muted); }
+.definition-card p {
+  color: var(--muted);
+}
 
 .criteria-list {
   display: grid;
@@ -64,7 +84,9 @@
   padding: 1rem 0;
   border-bottom: 1px solid var(--subtle);
 }
-.criteria-list strong { font-size: 1.04rem; }
+.criteria-list strong {
+  font-size: 1.04rem;
+}
 
 .quote-block {
   margin: 0;
@@ -76,18 +98,27 @@
   letter-spacing: -0.018em;
 }
 
-.identity-panel, .contact-path {
+.identity-panel,
+.contact-path {
   padding: 1.35rem;
   border: 1px solid var(--subtle);
   border-radius: var(--radius-md);
   background: var(--surface);
 }
 
-.identity-panel ul { margin-bottom: 0; }
-.contact-path p { color: var(--muted); }
-.mt-3 { margin-top: 3rem; }
+.identity-panel ul {
+  margin-bottom: 0;
+}
+.contact-path p {
+  color: var(--muted);
+}
+.mt-3 {
+  margin-top: 3rem;
+}
 
-.founder-note { margin-top: 1.75rem; }
+.founder-note {
+  margin-top: 1.75rem;
+}
 
 .reference-context {
   margin-top: 1.25rem;

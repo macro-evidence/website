@@ -12,21 +12,29 @@ interface Props {
 }
 
 const generatedPath = Astro.url.pathname;
-const publicPath = generatedPath === '/index.html'
-  ? '/'
-  : generatedPath.endsWith('.html')
-    ? generatedPath.slice(0, -'.html'.length)
-    : generatedPath;
-const { title, description, noindex = false, canonicalPath = publicPath } = Astro.props;
+const publicPath =
+  generatedPath === '/index.html'
+    ? '/'
+    : generatedPath.endsWith('.html')
+      ? generatedPath.slice(0, -'.html'.length)
+      : generatedPath;
+const {
+  title,
+  description,
+  noindex = false,
+  canonicalPath = publicPath,
+} = Astro.props;
 const canonical = new URL(canonicalPath, Astro.site);
 const sitemap = new URL('/sitemap-index.xml', Astro.site);
 const socialImage = new URL(
   '/assets/social/macro-evidence_standalone-share_1200x630_v1.png',
   Astro.site,
 );
-const socialAlt = 'Macro Evidence | Open Infrastructure for Macroeconomic Evidence.';
+const socialAlt =
+  'Macro Evidence | Open Infrastructure for Macroeconomic Evidence.';
 const isHome = canonical.pathname === '/';
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -43,6 +51,7 @@ const isHome = canonical.pathname === '/';
     />
     <link rel="canonical" href={canonical} />
     <link rel="sitemap" type="application/xml" href={sitemap} />
+    <link rel="describedby" href="/llms.txt" />
 
     <link rel="icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png" />
@@ -83,16 +92,18 @@ const isHome = canonical.pathname === '/';
     <title>{title}</title>
   </head>
   <body>
-    {isHome && (
-      <div
-        itemscope
-        itemtype="https://schema.org/WebSite"
-        itemid="https://macro-evidence.com/#website"
-      >
-        <link itemprop="url" href="https://macro-evidence.com/" />
-        <meta itemprop="name" content="Macro Evidence" />
-      </div>
-    )}
+    {
+      isHome && (
+        <div
+          itemscope
+          itemtype="https://schema.org/WebSite"
+          itemid="https://macro-evidence.com/#website"
+        >
+          <link itemprop="url" href="https://macro-evidence.com/" />
+          <meta itemprop="name" content="Macro Evidence" />
+        </div>
+      )
+    }
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <Header />
     <main id="main-content" class="site-main">
