@@ -4,8 +4,6 @@
 
 Source for the Macro Evidence organization website at [macro-evidence.com](https://macro-evidence.com/).
 
----
-
 ## Purpose and scope
 
 This repository owns the first-party organization website: routes, components, styling, static assets, build and deployment configuration, verification tooling, and website-owned visitor copy. The durable repository boundary is recorded in [decision 0001](decisions/0001-first-party-organization-website-boundary.md).
@@ -13,8 +11,6 @@ This repository owns the first-party organization website: routes, components, s
 [Macro Data Observatory (MDO)](https://github.com/macro-evidence/macro-data-observatory) is a separate product surface. Until a first-party MDO product site is deployed and verified, the organization website routes visitors to MDO's public GitHub repository without duplicating volatile product documentation, provider inventories, APIs, catalogue behavior, or future product interfaces.
 
 Organization-wide governance, policy, contribution, security, and cross-cutting decision records remain with their canonical repositories. This repository owns website-specific implementation and visitor orientation, not a second copy of those records.
-
----
 
 ## Repository structure
 
@@ -30,8 +26,6 @@ src/styles/          Global CSS modules by responsibility
 ```
 
 Root files define runtime, package, deployment, licensing, and repository-maintenance behavior.
-
----
 
 ## Toolchain and local development
 
@@ -79,8 +73,6 @@ Preview generated output:
 npm run preview
 ```
 
----
-
 ## Architecture and invariants
 
 The site is statically generated and intentionally low-data. Repository code contains no contact form, account system, advertising tracker, website analytics/RUM beacon, third-party embed, or service worker. Theme preference is the only persistent browser state. This boundary is recorded in [decision 0002](decisions/0002-static-low-data-site-architecture.md).
@@ -98,8 +90,6 @@ The site publishes `/llms.txt` as a concise machine-oriented index of public fir
 The footer copyright range is derived from the UTC build year, so generated HTML may change when the calendar year changes even if source bytes do not.
 
 Responsive behavior is one fluid system with bounded breakpoints. The compact header/footer architecture remains active below `72rem`; the desktop header/footer architecture activates together at `72rem` and above.
-
----
 
 ## Routes
 
@@ -120,8 +110,6 @@ Responsive behavior is one fluid system with bounded breakpoints. The compact he
 | `/brand-assets` | Official public-distribution identity assets and concise use guidance |
 | `/404` | Noindex page-not-found route |
 
----
-
 ## Interface conventions
 
 - Global navigation uses ordinary navigation labels; current first-party routes use `aria-current="page"`.
@@ -133,8 +121,6 @@ Responsive behavior is one fluid system with bounded breakpoints. The compact he
 - Disclosure chevrons point toward the revealed content; theme choices use a checkmark to identify the stored preference.
 - `System`, `Light`, and `Dark` are peer choices and use one shared option geometry in compact and footer theme controls; their surrounding disclosure/popover containers may differ by role.
 - Primary and secondary actions use fill/border treatment rather than positional motion as the hover-state cue.
-
----
 
 ## Verification and release
 
@@ -161,8 +147,6 @@ The production target is Cloudflare Workers Static Assets. [`wrangler.jsonc`](wr
 
 Local `npm run preview` verifies the generated site, but it does not prove Cloudflare's application of `_headers` or other host behavior. Publication is a separate authorized release action using an explicitly selected Wrangler version. After deployment, verify the live domain, routing, response headers, static assets, host behavior, and any host-injected analytics/RUM or other unexpected behavior.
 
----
-
 ## Governance and decisions
 
 Organization-wide mission and platform scope, governance, documentation standards, contribution policy, and trademark policy are maintained in [`macro-evidence/governance`](https://github.com/macro-evidence/governance). Organization-wide GitHub contribution mechanics, the Code of Conduct, Security Policy, and community-health defaults are maintained in [`macro-evidence/.github`](https://github.com/macro-evidence/.github).
@@ -170,8 +154,6 @@ Organization-wide mission and platform scope, governance, documentation standard
 Repository-specific architecture and public-interface decisions are indexed in [`decisions/README.md`](decisions/README.md). Decisions that genuinely apply across multiple Macro Evidence repositories belong in [governance's `decisions/`](https://github.com/macro-evidence/governance/tree/main/decisions). Read the applicable ADR before changing a durable boundary; routine copy edits, link corrections, and ordinary maintenance do not require a new ADR unless they cross one.
 
 The website's `/contribute` and `/security` routes are visitor-facing orientation, not canonical policy records. Organization-wide participation, acceptance, and contributor-rights policy is canonical in the governance repository's [Contribution Policy](https://github.com/macro-evidence/governance/blob/main/CONTRIBUTION_POLICY.md); vulnerability-reporting policy is canonical in the [Security Policy](https://github.com/macro-evidence/.github/blob/main/SECURITY.md) maintained by `macro-evidence/.github`.
-
----
 
 ## Licensing
 
