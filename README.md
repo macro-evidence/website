@@ -1,6 +1,6 @@
 # Macro Evidence Website
 
-[![Verify](https://github.com/macro-evidence/website/actions/workflows/verify.yml/badge.svg?branch=main&event=push)](https://github.com/macro-evidence/website/actions/workflows/verify.yml)
+[![Verification](https://github.com/macro-evidence/website/actions/workflows/verification.yml/badge.svg?branch=main&event=push)](https://github.com/macro-evidence/website/actions/workflows/verification.yml)
 
 Source for the Macro Evidence organization website at [macro-evidence.com](https://macro-evidence.com/).
 
