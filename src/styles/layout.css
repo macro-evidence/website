@@ -28,6 +28,17 @@
   color: var(--page-text);
 }
 
+.primary-action:active {
+  border-color: var(--color-primary-deep);
+  background: var(--color-primary-deep);
+  box-shadow: inset 0 0 0 2px rgba(5, 8, 22, 0.12);
+}
+
+.secondary-action:active {
+  background: var(--accent-soft);
+  box-shadow: inset 0 0 0 2px var(--control-border);
+}
+
 .text-link {
   font-weight: 700;
 }

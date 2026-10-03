@@ -287,6 +287,18 @@ const groups = [
     outline-color: var(--color-white);
   }
 
+  .footer-disclosures summary:active {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--color-white);
+  }
+
+  .footer-disclosures nav a:active,
+  .footer-desktop nav a:active {
+    text-decoration: underline;
+    text-decoration-thickness: 0.1em;
+    text-underline-offset: 0.18em;
+  }
+
   @media (hover: hover) and (pointer: fine) {
     .footer-disclosures summary:hover {
       background: rgba(255, 255, 255, 0.08);

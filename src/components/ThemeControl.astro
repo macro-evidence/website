@@ -170,6 +170,16 @@ const { mode = 'popover' } = Astro.props;
     box-shadow: 0 1rem 2.5rem rgba(5, 8, 22, 0.24);
   }
 
+  .theme-control summary:active,
+  .theme-options button:active {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--color-white);
+  }
+
+  .theme-control-popover summary:active {
+    border-color: rgba(255, 255, 255, 0.62);
+  }
+
   @media (hover: hover) and (pointer: fine) {
     .theme-control summary:hover,
     .theme-options button:hover {
