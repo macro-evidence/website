@@ -1,30 +1,8 @@
 # Architecture Decision Records
 
-Non-trivial technical and public-interface decisions for the Macro Evidence website are recorded here, per [`GOVERNANCE.md`](https://github.com/macro-evidence/governance/blob/main/GOVERNANCE.md) §5.
+This directory contains technical and public-interface decisions specific to the Macro Evidence website. Decisions that genuinely apply across multiple Macro Evidence repositories or to the organization's structure belong in the [Governance decision log](https://github.com/macro-evidence/governance/tree/main/decisions).
 
-These are decisions specific to this repository. Decisions that genuinely apply across multiple Macro Evidence repositories or to the organization's structure itself are recorded in [`governance/decisions/`](https://github.com/macro-evidence/governance/tree/main/decisions) instead.
-
-## Format
-
-One file per decision: `NNNN-short-title.md`, numbered sequentially, using:
-
-```markdown
-# NNNN. Short title
-
-**Status:** Proposed / Accepted / Superseded
-**Date:** YYYY-MM-DD
-
-## Context
-What problem or question this addresses.
-
-## Decision
-What was decided.
-
-## Consequences
-Expected benefits, trade-offs, risks, and follow-up implications.
-```
-
-**Decision count per ADR:** Most ADRs record one coherent decision boundary under the singular `## Decision` heading. An ADR may use a plural `## Decisions` heading only when multiple decisions are inseparable. Decisions that can be accepted, revisited, or superseded independently receive separate ADR numbers.
+The shared ADR contract—including numbering, filenames, references, lifecycle metadata, required structure, decision-boundary grammar, and index behavior—is defined in Macro Evidence's [Documentation Standards](https://github.com/macro-evidence/governance/blob/main/DOCUMENTATION_STANDARDS.md#5-architecture-decision-records).
 
 ## Decisions
 
