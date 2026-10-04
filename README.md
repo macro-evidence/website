@@ -137,7 +137,7 @@ The release path verifies canonical code/configuration formatting, Markdown stru
 | `npm run verify:assets` | Hash-pinned official identity assets |
 | `npm run copy:licenses` | Exact website and Inter license material carried into built output |
 | `npm run verify:dist` | Generated routes, metadata, links, resources, security, and licensing output |
-| `npm run release:verify` | Full build plus dependency vulnerability audit |
+| `npm run release:verify` | Full build plus production-dependency vulnerability audit |
 
 GitHub Actions runs the release verification path for pull requests, pushes to `main`, and manual dispatch with read-only permissions, the `ubuntu-24.04` runner, SHA-pinned actions, the exact Node/npm baseline, and a clean `npm ci`. CI verifies candidates but has no deployment authority.
 

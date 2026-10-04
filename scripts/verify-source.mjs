@@ -47,7 +47,7 @@ const requiredFiles = [
   'LICENSE-CONTENT',
   '.npmrc',
   '.nvmrc',
-  '.github/workflows/verify.yml',
+  '.github/workflows/verification.yml',
   'astro.config.mjs',
   'package.json',
   'package-lock.json',
@@ -365,9 +365,9 @@ if (packageJson.dependencies?.['@fontsource-variable/inter'] !== '5.3.0') {
     'Inter build dependency must remain exactly pinned to @fontsource-variable/inter@5.3.0.',
   );
 }
-if (packageJson.devDependencies?.['markdownlint-cli2'] !== '0.23.2')
+if (packageJson.devDependencies?.['markdownlint-cli2'] !== '0.23.3')
   throw new Error(
-    'Markdown lint dependency must remain exactly pinned to markdownlint-cli2@0.23.2.',
+    'Markdown lint dependency must remain exactly pinned to markdownlint-cli2@0.23.3.',
   );
 if (packageJson.overrides?.['markdownlint-cli2']?.['smol-toml'] !== '1.7.1')
   throw new Error(
@@ -432,7 +432,8 @@ for (const [name, expected] of Object.entries({
   lint: 'npm run lint:code && npm run lint:markdown',
   build:
     'npm run format:check && npm run lint && npm run verify:source && npm run verify:assets && astro check && astro build && npm run copy:licenses && npm run verify:dist',
-  'release:verify': 'npm run build && npm audit --audit-level=moderate',
+  'release:verify':
+    'npm run build && npm audit --omit=dev --audit-level=moderate',
 })) {
   if (packageJson.scripts?.[name] !== expected)
     throw new Error(`Package script ${name} is missing or drifted.`);
