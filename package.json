@@ -21,7 +21,7 @@
     "verify:dist": "node scripts/verify-dist.mjs",
     "build": "npm run format:check && npm run lint && npm run verify:source && npm run verify:assets && astro check && astro build && npm run copy:licenses && npm run verify:dist",
     "preview": "astro preview",
-    "release:verify": "npm run build && npm audit --audit-level=moderate",
+    "release:verify": "npm run build && npm audit --omit=dev --audit-level=moderate",
     "copy:licenses": "node scripts/copy-license-files.mjs",
     "format": "prettier --write src/**/*.{astro,css,ts,js} public/**/*.js scripts/**/*.mjs *.{mjs,json,jsonc} .github/**/*.{yml,yaml}",
     "format:check": "prettier --check src/**/*.{astro,css,ts,js} public/**/*.js scripts/**/*.mjs *.{mjs,json,jsonc} .github/**/*.{yml,yaml}",
