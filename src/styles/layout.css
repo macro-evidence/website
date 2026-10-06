@@ -39,6 +39,21 @@
   box-shadow: inset 0 0 0 2px var(--control-border);
 }
 
+/* Browser tap highlight is suppressed only where a custom :active state exists. */
+.primary-action,
+.secondary-action,
+.desktop-nav a,
+.contact-action,
+.compact-menu summary,
+.compact-panel nav a,
+.theme-control summary,
+.theme-options button,
+.footer-disclosures summary,
+.footer-disclosures nav a,
+.footer-desktop nav a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .text-link {
   font-weight: 700;
 }
