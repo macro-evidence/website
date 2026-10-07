@@ -369,9 +369,9 @@ if (packageJson.devDependencies?.['markdownlint-cli2'] !== '0.23.3')
   throw new Error(
     'Markdown lint dependency must remain exactly pinned to markdownlint-cli2@0.23.3.',
   );
-if (packageJson.overrides?.['markdownlint-cli2']?.['smol-toml'] !== '1.7.1')
+if (packageJson.overrides?.['markdownlint-cli2']?.['smol-toml'] !== '1.9.0')
   throw new Error(
-    'The reviewed markdownlint-cli2 smol-toml security override must remain pinned to 1.7.1.',
+    'The reviewed markdownlint-cli2 smol-toml security override must remain pinned to 1.9.0.',
   );
 
 const markdownlintText = await readFile(
