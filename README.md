@@ -53,7 +53,7 @@ npm run format:check
 npm run lint
 ```
 
-Prettier owns executable/source/configuration formatting in the paths declared by `package.json`; it does **not** rewrite Markdown prose. Markdown is checked separately with the exact-pinned `markdownlint-cli2` dependency. This repository's Markdown lint baseline keeps the standard rules while disabling line-length enforcement so policy prose, tables, and durable URLs are not mechanically reflowed.
+Prettier owns executable/source/configuration formatting in the paths declared by `package.json`; it does **not** rewrite Markdown prose. Markdown is checked separately with the exact-pinned `markdownlint-cli` dependency. This repository's Markdown lint baseline keeps the standard rules while disabling line-length enforcement so policy prose, tables, and durable URLs are not mechanically reflowed.
 
 Build production output:
 
