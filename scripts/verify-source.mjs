@@ -53,7 +53,7 @@ const requiredFiles = [
   'package-lock.json',
   'eslint.config.mjs',
   'prettier.config.mjs',
-  '.markdownlint-cli2.jsonc',
+  '.markdownlint.jsonc',
   'wrangler.jsonc',
   'public/_headers',
   'public/robots.txt',
@@ -365,17 +365,25 @@ if (packageJson.dependencies?.['@fontsource-variable/inter'] !== '5.3.0') {
     'Inter build dependency must remain exactly pinned to @fontsource-variable/inter@5.3.0.',
   );
 }
-if (packageJson.devDependencies?.['markdownlint-cli2'] !== '0.23.3')
+if (packageJson.devDependencies?.['markdownlint-cli'] !== '0.49.1')
   throw new Error(
-    'Markdown lint dependency must remain exactly pinned to markdownlint-cli2@0.23.3.',
+    'Markdown lint dependency must remain exactly pinned to markdownlint-cli@0.49.1.',
   );
-if (packageJson.overrides?.['markdownlint-cli2']?.['smol-toml'] !== '1.9.0')
+const expectedMarkdownlintOverrides = {
+  'js-yaml': '5.4.3',
+  katex: '0.19.0',
+  'smol-toml': '1.9.1',
+};
+if (
+  JSON.stringify(packageJson.overrides?.['markdownlint-cli'] ?? {}) !==
+  JSON.stringify(expectedMarkdownlintOverrides)
+)
   throw new Error(
-    'The reviewed markdownlint-cli2 smol-toml security override must remain pinned to 1.9.0.',
+    'The reviewed markdownlint-cli security overrides must remain pinned to js-yaml 5.4.3, katex 0.19.0, and smol-toml 1.9.1.',
   );
 
 const markdownlintText = await readFile(
-  join(root, '.markdownlint-cli2.jsonc'),
+  join(root, '.markdownlint.jsonc'),
   'utf8',
 );
 const markdownlintParseErrors = [];
@@ -387,24 +395,19 @@ const markdownlintConfig = parseJsonc(
   },
 );
 if (markdownlintParseErrors.length > 0)
-  throw new Error('.markdownlint-cli2.jsonc contains invalid JSONC.');
-if (
-  markdownlintConfig?.config?.default !== true ||
-  markdownlintConfig?.config?.MD013 !== false
-)
+  throw new Error('.markdownlint.jsonc contains invalid JSONC.');
+if (markdownlintConfig?.default !== true || markdownlintConfig?.MD013 !== false)
   throw new Error(
     'Markdown lint baseline must enable default rules while disabling MD013 line-length enforcement.',
   );
-if (markdownlintConfig?.gitignore !== '.gitignore')
-  throw new Error('Markdown lint must honor the repository .gitignore.');
-const expectedMarkdownIgnores = ['node_modules/**', 'dist/**', '.astro/**'];
-if (
-  JSON.stringify(markdownlintConfig?.ignores ?? []) !==
-  JSON.stringify(expectedMarkdownIgnores)
-)
-  throw new Error(
-    'Markdown lint generated/dependency ignore inventory drifted.',
-  );
+const gitignoreLines = (await readFile(join(root, '.gitignore'), 'utf8'))
+  .split(/\r?\n/)
+  .map((line) => line.trim());
+for (const entry of ['node_modules/', 'dist/', '.astro/'])
+  if (!gitignoreLines.includes(entry))
+    throw new Error(
+      `Markdown lint relies on the repository .gitignore entry ${entry}.`,
+    );
 
 const prettierConfig = await readFile(
   join(root, 'prettier.config.mjs'),
@@ -428,7 +431,7 @@ for (const [name, expected] of Object.entries({
     'prettier --check src/**/*.{astro,css,ts,js} public/**/*.js scripts/**/*.mjs *.{mjs,json,jsonc} .github/**/*.{yml,yaml}',
   'lint:code':
     'eslint "src/**/*.astro" "public/**/*.js" "scripts/**/*.mjs" "*.mjs"',
-  'lint:markdown': 'markdownlint-cli2 "**/*.md"',
+  'lint:markdown': 'markdownlint "**/*.md" --ignore-path .gitignore',
   lint: 'npm run lint:code && npm run lint:markdown',
   build:
     'npm run format:check && npm run lint && npm run verify:source && npm run verify:assets && astro check && astro build && npm run copy:licenses && npm run verify:dist',
