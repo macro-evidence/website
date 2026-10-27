@@ -343,11 +343,11 @@ for (const field of ['name', 'version', 'license']) {
   if (lockRoot[field] !== packageJson[field])
     throw new Error(`package-lock root ${field} must match package.json.`);
 }
-if (packageJson.packageManager !== 'npm@12.0.2')
+if (packageJson.packageManager !== 'npm@12.2.1')
   throw new Error('Unexpected packageManager baseline.');
 if (
-  packageJson.engines?.node !== '24.21.0' ||
-  packageJson.engines?.npm !== '12.0.2'
+  packageJson.engines?.node !== '24.22.1' ||
+  packageJson.engines?.npm !== '12.2.1'
 )
   throw new Error('Unexpected Node/npm release baseline.');
 for (const dependencyGroup of ['dependencies', 'devDependencies']) {
@@ -484,7 +484,7 @@ if (
 }
 
 const nvmrc = (await readFile(join(root, '.nvmrc'), 'utf8')).trim();
-if (nvmrc !== '24.21.0') throw new Error(`Unexpected .nvmrc value: ${nvmrc}`);
+if (nvmrc !== '24.22.1') throw new Error(`Unexpected .nvmrc value: ${nvmrc}`);
 const npmrc = await readFile(join(root, '.npmrc'), 'utf8');
 for (const required of [
   'strict-allow-scripts=true',
