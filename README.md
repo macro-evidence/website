@@ -31,8 +31,8 @@ Root files define runtime, package, deployment, licensing, and repository-mainte
 
 The supported runtime baseline is:
 
-- Node.js **24.21.0** exactly
-- npm **12.0.2** exactly
+- Node.js **24.22.1** exactly
+- npm **12.2.1** exactly
 
 Direct framework, compiler, build, and other package dependencies are exact-pinned in [`package.json`](package.json); [`package-lock.json`](package-lock.json) is the authoritative resolved dependency graph. Use `npm ci` for a clean reproducible install rather than independently selecting dependency versions. npm dependency install scripts are deny-by-default; reviewed exceptions are declared in `package.json`.
 
