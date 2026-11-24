@@ -435,8 +435,7 @@ for (const [name, expected] of Object.entries({
   lint: 'npm run lint:code && npm run lint:markdown',
   build:
     'npm run format:check && npm run lint && npm run verify:source && npm run verify:assets && astro check && astro build && npm run copy:licenses && npm run verify:dist',
-  'release:verify':
-    'npm run build && npm audit --omit=dev --audit-level=moderate',
+  'release:verify': 'npm run build && npm audit --audit-level=moderate',
 })) {
   if (packageJson.scripts?.[name] !== expected)
     throw new Error(`Package script ${name} is missing or drifted.`);
