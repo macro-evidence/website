@@ -70,6 +70,7 @@ const requiredFiles = [
   'src/components/ThemeControl.astro',
   'src/components/PublicRecordCard.astro',
   'src/pages/governance/index.astro',
+  'src/pages/governance/organization-charter.astro',
   'src/pages/contribute.astro',
   'src/pages/security.astro',
   'src/pages/trademarks.astro',
@@ -556,7 +557,7 @@ for (const required of [
   '# Macro Evidence',
   '> Macro Evidence is a software organization building open macroeconomic data infrastructure.',
   'Canonical website: https://macro-evidence.com/',
-  'https://github.com/macro-evidence/governance/blob/main/ORGANIZATION_CHARTER.md',
+  'https://macro-evidence.com/governance/organization-charter',
   'https://github.com/macro-evidence/governance/blob/main/GOVERNANCE.md',
   'https://github.com/macro-evidence/governance/blob/main/DOCUMENTATION_STANDARDS.md',
   'https://github.com/macro-evidence/governance/blob/main/CONTRIBUTION_POLICY.md',
@@ -577,6 +578,29 @@ if (!/under active development/i.test(llms))
   throw new Error(
     'llms.txt must preserve the current MDO development-state qualifier.',
   );
+
+// Versioned policy pages: the visible status line and the first changelog
+// entry must state the same version and release date.
+const policyPages = ['src/pages/governance/organization-charter.astro'];
+for (const page of policyPages) {
+  const pageSource = await readFile(join(root, page), 'utf8');
+  const status = pageSource.match(
+    /<p class="policy-status">\s*Version (\d+\.\d+\.\d+) · Active · Last updated (\d{4}-\d{2}-\d{2})\s*<\/p>/,
+  );
+  const firstEntry = pageSource.match(
+    /<h2 id="changelog">\s*Changelog\s*<\/h2>\s*<h3 id="[^"]*">\s*(\d+\.\d+\.\d+) \((\d{4}-\d{2}-\d{2})\)\s*<\/h3>/,
+  );
+  if (!status)
+    throw new Error(`${page} must open with its policy status line.`);
+  if (!firstEntry)
+    throw new Error(
+      `${page} must end with a changelog that starts with a dated version.`,
+    );
+  if (status[1] !== firstEntry[1] || status[2] !== firstEntry[2])
+    throw new Error(
+      `${page} status line (${status[1]}, ${status[2]}) and first changelog entry (${firstEntry[1]}, ${firstEntry[2]}) disagree.`,
+    );
+}
 
 const securityTxt = await readFile(
   join(publicDir, '.well-known', 'security.txt'),

@@ -1,0 +1,189 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+---
+
+<Layout
+  title="Organization & Platform Charter | Macro Evidence"
+  description="The Macro Evidence Organization & Platform Charter: mission, vision, flagship platform, product ecosystem and durable direction."
+>
+  <PageIntro
+    kicker="Governance"
+    title="Organization & Platform Charter"
+    lead="The mission, vision, platform scope and durable direction of Macro Evidence."
+  />
+
+  <section class="section policy-page">
+    <div class="site-container reading policy-reading-wide">
+      <article class="policy-text">
+        <p class="policy-status">
+          Version 1.0.0 · Active · Last updated 2026-11-25
+        </p>
+        <h2 id="1-organization">1. Organization</h2>
+        <h3 id="mission">Mission</h3>
+        <p>
+          Macro Evidence builds open macroeconomic data infrastructure around
+          provenance, validation, reproducibility, and transparency. It develops
+          shared foundations, products, reference layers, and interfaces, each
+          with clear canonical ownership.
+        </p>
+        <h3 id="vision">Vision</h3>
+        <p>
+          To become a lasting, trusted steward of open macroeconomic data
+          infrastructure, built incrementally on evidence, one disciplined
+          decision at a time.
+        </p>
+        <h3 id="engineering-philosophy">Engineering philosophy</h3>
+        <ul>
+          <li>engineering rigor over presentation;</li>
+          <li>reproducibility over one-off solutions;</li>
+          <li>transparency over opacity;</li>
+          <li>maintainability over short-term convenience;</li>
+          <li>modular architecture over monoliths;</li>
+          <li>documentation alongside implementation; and</li>
+          <li>incremental capability growth over speculative scope.</li>
+        </ul>
+        <h2
+          id="2-flagship-and-foundational-platform--macro-data-observatory-mdo"
+        >
+          2. Flagship and Foundational Platform — Macro Data Observatory (MDO)
+        </h2>
+        <p>
+          Macro Data Observatory (MDO) is Macro Evidence's flagship and
+          foundational macro-data platform.
+        </p>
+        <p>
+          Its role is to acquire, validate, structure, and maintain
+          macroeconomic data from authoritative public sources through
+          reproducible engineering. MDO owns the canonical technical and data
+          truth for its data sources, series, metadata, transformations,
+          interfaces, and runtime behavior.
+        </p>
+        <p>MDO's durable objectives are to:</p>
+        <ul>
+          <li>
+            maintain one coherent macroeconomic data foundation across
+            authoritative public sources;
+          </li>
+          <li>
+            normalize heterogeneous source data into consistent, researchable
+            series;
+          </li>
+          <li>
+            make provenance, validation, reproducibility, and maintainability
+            explicit infrastructure requirements;
+          </li>
+          <li>
+            provide the shared macro-data foundation for Macro Evidence products
+            and interfaces that require canonical macroeconomic data; and
+          </li>
+          <li>
+            keep implementation and architectural decisions documented in MDO's
+            own canonical repository and runtime evidence.
+          </li>
+        </ul>
+        <p>
+          MDO's implementation details, current provider coverage, live runtime
+          state, schemas, and release status belong to the MDO repository and
+          verified runtime evidence rather than this organization charter.
+        </p>
+        <h2 id="3-product-ecosystem">3. Product Ecosystem</h2>
+        <p>
+          Macro Evidence may develop products, interfaces, and reference layers
+          with distinct roles while preserving one coherent macro-data
+          foundation.
+        </p>
+        <div
+          class="table-scroll"
+          role="region"
+          tabindex="0"
+          aria-label="Table, 3. Product Ecosystem"
+        >
+          <table>
+            <thead>
+              <tr>
+                <th>Entity</th>
+                <th>Organization-level role</th>
+                <th>Canonical boundary</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Macro Evidence</td>
+                <td>Organization, governance, identity, and stewardship</td>
+                <td>Organization governance and public institutional records</td
+                >
+              </tr>
+              <tr>
+                <td>Macro Data Observatory (MDO)</td>
+                <td>Flagship and foundational macro-data platform</td>
+                <td
+                  >MDO repository, canonical sources, decisions, and verified
+                  runtime evidence</td
+                >
+              </tr>
+              <tr>
+                <td>Macro Data Dictionary (MDD)</td>
+                <td>Organization-level reference and explanatory layer</td>
+                <td>MDD repository and future MDD-specific canonical records</td
+                >
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          MDD is an organization-owned sibling of MDO under Macro Evidence, not
+          a child or subproject of MDO. It may explain macroeconomic
+          terminology, metadata concepts, and reference material that applies
+          across Macro Evidence products.
+        </p>
+        <p>
+          Where MDD presents MDO-specific technical or data facts, those facts
+          derive from MDO's canonical sources. MDD does not create an
+          independent competing source of truth for MDO's implementation or
+          data.
+        </p>
+        <p>
+          Future products that require the same canonical macroeconomic data
+          should build on, consume, expose, or otherwise operate on MDO's shared
+          foundation rather than recreating a parallel macro-data foundation.
+          Reference layers may span products without becoming independent data
+          foundations.
+        </p>
+        <p>
+          Each new material product or layer is evaluated through the governance
+          decision process before implementation. Product-specific architecture,
+          URLs, identity, licensing, schemas, and feature scope remain
+          repository-level or separately governed decisions unless they
+          genuinely require organization-wide treatment.
+        </p>
+        <h2 id="4-durable-direction">4. Durable Direction</h2>
+        <p>
+          Macro Evidence is intended to mature as an ecosystem of professionally
+          engineered public infrastructure centered on trustworthy macroeconomic
+          data.
+        </p>
+        <p>
+          Growth remains evidence-paced. New capabilities are added when they
+          solve a demonstrated problem and can be integrated without fragmenting
+          canonical ownership, duplicating the macro-data foundation, or
+          creating maintenance obligations disproportionate to their value.
+        </p>
+        <p>
+          Macro Evidence's organizational identity rests on stewarding one
+          coherent infrastructure system while allowing its products,
+          interfaces, reference layers, and implementation choices to evolve as
+          evidence changes.
+        </p>
+        <h2 id="changelog">Changelog</h2>
+        <h3 id="100-2026-11-25">1.0.0 (2026-11-25)</h3>
+        <ul>
+          <li>
+            Initial version. Re-established on the Macro Evidence website. The
+            substance continues the earlier published version of this document.
+          </li>
+        </ul>
+      </article>
+    </div>
+  </section>
+</Layout>

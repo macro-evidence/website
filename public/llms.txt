@@ -15,7 +15,7 @@ Canonical website: https://macro-evidence.com/
 
 ## Canonical public records
 
-- [Organization & Platform Charter](https://github.com/macro-evidence/governance/blob/main/ORGANIZATION_CHARTER.md): Mission, vision, organization/platform scope, and durable direction.
+- [Organization & Platform Charter](https://macro-evidence.com/governance/organization-charter): Mission, vision, organization/platform scope, and durable direction.
 - [Governance & Decision-Making Charter](https://github.com/macro-evidence/governance/blob/main/GOVERNANCE.md): Decision criteria, review, and Architecture Decision Records.
 - [Documentation Standards](https://github.com/macro-evidence/governance/blob/main/DOCUMENTATION_STANDARDS.md): Documentation ownership, writing, formatting, naming, and commit conventions.
 - [Contribution Policy](https://github.com/macro-evidence/governance/blob/main/CONTRIBUTION_POLICY.md): Organization-wide participation, acceptance, contributor-rights, and stewardship policy.
