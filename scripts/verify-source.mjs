@@ -69,7 +69,7 @@ const requiredFiles = [
   'src/components/Footer.astro',
   'src/components/ThemeControl.astro',
   'src/components/PublicRecordCard.astro',
-  'src/pages/governance.astro',
+  'src/pages/governance/index.astro',
   'src/pages/contribute.astro',
   'src/pages/security.astro',
   'src/pages/trademarks.astro',
