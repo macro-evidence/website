@@ -62,6 +62,7 @@ const baseRoutes = [
   '/contact',
   '/contribute',
   '/governance',
+  '/governance/organization-charter',
   '/licensing',
   '/principles',
   '/privacy',
@@ -185,6 +186,22 @@ for (const { path, text } of htmlEntries) {
   const h1Count = (text.match(/<h1\b/gi) || []).length;
   if (h1Count !== 1)
     throw new Error(`Expected exactly one h1 in ${file}; found ${h1Count}`);
+
+  // Astro compresses a line break between text and an inline element into
+  // nothing. A word fused to an inline tag in a policy document would change
+  // its text, so reject it.
+  const policyText = text.match(
+    /<article class="policy-text">([\s\S]*?)<\/article>/,
+  )?.[1];
+  if (policyText) {
+    const fused = policyText.match(
+      /[\p{L}\p{N}]<(?:code|a|strong|em)[\s>]|<\/(?:code|a|strong|em)>[\p{L}\p{N}]/u,
+    );
+    if (fused)
+      throw new Error(
+        `Word fused to an inline element in ${file}: ${fused[0]}. Write an explicit space (&#32;) at that boundary.`,
+      );
+  }
 
   const ids = [...text.matchAll(/\sid=["']([^"']+)["']/gi)].map((m) => m[1]);
   const duplicateIds = [
@@ -587,7 +604,7 @@ const llms = await readFile(join(dist, 'llms.txt'), 'utf8');
 for (const required of [
   '# Macro Evidence',
   'Canonical website: https://macro-evidence.com/',
-  'https://github.com/macro-evidence/governance/blob/main/ORGANIZATION_CHARTER.md',
+  'https://macro-evidence.com/governance/organization-charter',
   'https://github.com/macro-evidence/macro-data-observatory',
   'https://github.com/macro-evidence',
   'https://www.linkedin.com/company/macro-evidence',
