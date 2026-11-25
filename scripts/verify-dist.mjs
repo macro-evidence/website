@@ -63,6 +63,8 @@ const baseRoutes = [
   '/contribute',
   '/governance',
   '/governance/organization-charter',
+  '/governance/documentation-standards',
+  '/governance/decision-making',
   '/licensing',
   '/principles',
   '/privacy',

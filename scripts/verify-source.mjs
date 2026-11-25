@@ -71,6 +71,8 @@ const requiredFiles = [
   'src/components/PublicRecordCard.astro',
   'src/pages/governance/index.astro',
   'src/pages/governance/organization-charter.astro',
+  'src/pages/governance/documentation-standards.astro',
+  'src/pages/governance/decision-making.astro',
   'src/pages/contribute.astro',
   'src/pages/security.astro',
   'src/pages/trademarks.astro',
@@ -558,8 +560,8 @@ for (const required of [
   '> Macro Evidence is a software organization building open macroeconomic data infrastructure.',
   'Canonical website: https://macro-evidence.com/',
   'https://macro-evidence.com/governance/organization-charter',
-  'https://github.com/macro-evidence/governance/blob/main/GOVERNANCE.md',
-  'https://github.com/macro-evidence/governance/blob/main/DOCUMENTATION_STANDARDS.md',
+  'https://macro-evidence.com/governance/decision-making',
+  'https://macro-evidence.com/governance/documentation-standards',
   'https://github.com/macro-evidence/governance/blob/main/CONTRIBUTION_POLICY.md',
   'https://github.com/macro-evidence/governance/blob/main/TRADEMARKS.md',
   'https://github.com/macro-evidence/.github/blob/main/SECURITY.md',
@@ -581,7 +583,11 @@ if (!/under active development/i.test(llms))
 
 // Versioned policy pages: the visible status line and the first changelog
 // entry must state the same version and release date.
-const policyPages = ['src/pages/governance/organization-charter.astro'];
+const policyPages = [
+  'src/pages/governance/organization-charter.astro',
+  'src/pages/governance/decision-making.astro',
+  'src/pages/governance/documentation-standards.astro',
+];
 for (const page of policyPages) {
   const pageSource = await readFile(join(root, page), 'utf8');
   const status = pageSource.match(
