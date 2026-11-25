@@ -1,0 +1,354 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+---
+
+<Layout
+  title="Governance & Decision-Making Charter | Macro Evidence"
+  description="The Macro Evidence Governance & Decision-Making Charter: decision criteria, execution model, review cadence, decision records, hierarchy and versioning."
+>
+  <PageIntro
+    kicker="Governance"
+    title="Governance & Decision-Making Charter"
+    lead="How Macro Evidence evaluates, records and approves organization-wide decisions."
+  />
+
+  <section class="section policy-page">
+    <div class="site-container reading policy-reading-wide">
+      <article class="policy-text">
+        <p class="policy-status">
+          Version 1.0.0 · Active · Last updated 2026-11-25
+        </p>
+        <h2 id="1-purpose">1. Purpose</h2>
+        <p>
+          This charter defines how Macro Evidence evaluates, records, reviews,
+          and changes material organizational and technical decisions.
+        </p>
+        <p>
+          The objective is durable decision quality: choices should be explicit,
+          evidence-based, auditable, maintainable, and reversible when new
+          evidence or changed conditions justify reconsideration. The process is
+          intentionally lightweight enough to remain practical while remaining
+          clear enough to adopt without renegotiating first principles.
+        </p>
+        <h2 id="2-decision-criteria">2. Decision Criteria</h2>
+        <p>
+          Every non-trivial addition, including a tool, dependency, dataset,
+          repository, architectural change, workflow, policy, or product, is
+          evaluated against the following criteria.
+        </p>
+        <div
+          class="table-scroll"
+          role="region"
+          tabindex="0"
+          aria-label="Table, 2. Decision Criteria"
+        >
+          <table>
+            <thead>
+              <tr>
+                <th>Criterion</th>
+                <th>Question asked</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Necessity</td>
+                <td
+                  >Does this solve a real, current problem rather than a
+                  hypothetical future one?</td
+                >
+              </tr>
+              <tr>
+                <td>Simplicity</td>
+                <td
+                  >Is this the simplest solution that fully addresses the
+                  problem?</td
+                >
+              </tr>
+              <tr>
+                <td>Consistency</td>
+                <td
+                  >Does this align with existing standards and conventions
+                  rather than creating unnecessary one-off behavior?</td
+                >
+              </tr>
+              <tr>
+                <td>Maintainability</td>
+                <td
+                  >Can this remain understandable, operable, and evolvable over
+                  time without disproportionate maintenance burden?</td
+                >
+              </tr>
+              <tr>
+                <td>Reproducibility</td>
+                <td
+                  >Can this be recreated and verified from documented procedures
+                  without depending on access unavailable to the intended users
+                  or maintainers?</td
+                >
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          The criteria are not a scorecard. A proposal does not become
+          acceptable merely because most criteria pass. Implementation is
+          deferred while any material unresolved failure remains.
+        </p>
+        <p>
+          Trade-offs are permitted when they are explicit, proportionate, and
+          justified by evidence. A decision may accept a bounded weakness in one
+          criterion when doing so is necessary to satisfy a more material
+          requirement and the resulting risk is understood and documented.
+        </p>
+        <h2 id="3-execution-model">3. Execution Model</h2>
+        <p>Work proceeds through explicit, ordered stages.</p>
+        <ol>
+          <li>
+            A task or decision is defined with its objective, evidence,
+            dependencies, scope, and expected deliverable.
+          </li>
+          <li>
+            Material alternatives and constraints are considered before
+            implementation when they could change the decision boundary.
+          </li>
+          <li>
+            The selected direction is approved before consequential
+            implementation begins.
+          </li>
+          <li>
+            Once accepted, the decision becomes the working baseline and is not
+            reopened for preference alone. Reconsideration requires new
+            evidence, changed conditions, or a material defect.
+          </li>
+          <li>
+            Completion means producing and verifying the real deliverable, such
+            as code, documentation, configuration, deployment, policy, or
+            operational process, rather than merely planning it.
+          </li>
+        </ol>
+        <p>
+          This execution model applies across Macro Evidence initiatives.
+          Repository-specific workflows may add implementation stages, but they
+          must preserve the same decision discipline.
+        </p>
+        <h2 id="4-review-cadence">4. Review Cadence</h2>
+        <p>
+          Governance is reviewed when material change is proposed, when new
+          evidence creates a concrete conflict or stale claim, and as a whole at
+          least quarterly while Macro Evidence remains actively maintained. A
+          periodic review may conclude that no change is needed.
+        </p>
+        <p>
+          A review date does not itself reopen an accepted decision.
+          Reconsideration requires new evidence, changed conditions, or a
+          material defect. Whole-corpus review checks for contradictions across
+          canonical documents, stale current-state claims, unresolved proposals,
+          and external dependencies whose material change could affect an
+          existing rule or decision.
+        </p>
+        <p>
+          Time-bound or externally dependent claims should be reverified when
+          they materially affect a decision or public statement, rather than
+          being assumed current because they were true at an earlier review.
+        </p>
+        <h2 id="5-decision-records">5. Decision Records</h2>
+        <p>
+          Non-trivial technical and organizational decisions are recorded as
+          Architecture Decision Records (ADRs) when preserving the decision
+          boundary, rationale, and consequences will materially help future
+          maintenance or governance.
+        </p>
+        <p>
+          Repository-specific decisions live in that repository's own <code
+            >decisions/</code
+          > directory and form that repository's decision series. Decisions that genuinely
+          apply across multiple repositories or to Macro Evidence's organization-level
+          structure form the Governance decision series and are published under <a
+            href="https://github.com/macro-evidence/governance/tree/main/decisions"
+            >Governance decisions</a
+          >.
+        </p>
+        <p>
+          The organization-wide ADR contract, including placement, numbering
+          within each decision series, filenames, references across decision
+          series, lifecycle metadata, required sections, decision-boundary
+          grammar, and index responsibilities, is defined in <a
+            href="/governance/documentation-standards"
+            >Documentation Standards</a
+          > §5. Repository indexes may add local orientation, but they must not redefine
+          that shared contract.
+        </p>
+        <p>
+          An ADR is not required for every implementation detail. Use an ADR
+          when the decision has durable architectural, public-interface, policy,
+          rights, governance, or cross-cutting consequences, or when the cost of
+          later rediscovery would be material.
+        </p>
+        <h2 id="6-governance-hierarchy">6. Governance Hierarchy</h2>
+        <p>
+          Governance documents have explicit precedence within their scopes.
+        </p>
+        <div
+          class="table-scroll"
+          role="region"
+          tabindex="0"
+          aria-label="Table, 6. Governance Hierarchy"
+        >
+          <table>
+            <thead>
+              <tr>
+                <th>Level</th>
+                <th>Canonical document</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td
+                  >Organization mission, vision, platform roles, product
+                  relationships, durable direction</td
+                >
+                <td
+                  ><a href="/governance/organization-charter"
+                    >Organization &amp; Platform Charter</a
+                  ></td
+                >
+              </tr>
+              <tr>
+                <td>Organization governance and decision-making</td>
+                <td
+                  ><a href="/governance/decision-making"
+                    >Governance &amp; Decision-Making Charter</a
+                  ></td
+                >
+              </tr>
+              <tr>
+                <td>Documentation and ADR standards</td>
+                <td
+                  ><a href="/governance/documentation-standards"
+                    >Documentation Standards</a
+                  ></td
+                >
+              </tr>
+              <tr>
+                <td>Organization policies within their defined subjects</td>
+                <td
+                  ><a href="/contribute">Contribution Policy</a>; <a
+                    href="/trademarks">Trademarks Policy</a
+                  ></td
+                >
+              </tr>
+              <tr>
+                <td
+                  >Approved legal instruments and their public operating process</td
+                >
+                <td
+                  ><a
+                    href="https://github.com/macro-evidence/governance/tree/main/legal/cla"
+                    ><code>legal/cla/</code></a
+                  > within the scope established by applicable policy and ADRs</td
+                >
+              </tr>
+              <tr>
+                <td>Repository policies and ADRs</td>
+                <td>Repository-specific governance documents and decisions</td>
+              </tr>
+              <tr>
+                <td>Repository implementation and current runtime behavior</td>
+                <td
+                  >Repository documentation, source, configuration, and verified
+                  runtime evidence</td
+                >
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Precedence is scope-aware. A higher-listed document does not become
+          canonical for a subject outside its defined role. Policies at the same
+          level govern their own subjects; listing order does not let one
+          silently override another.
+        </p>
+        <p>
+          When two canonical sources appear to conflict, resolve the conflict by
+          scope, freshness, and authority rather than silently selecting the
+          more convenient statement. Repository documentation may extend
+          organization standards but must not contradict them.
+        </p>
+        <h2 id="7-versioning-foundational-documents">
+          7. Versioning Foundational Documents
+        </h2>
+        <p>
+          This charter, <a href="/governance/organization-charter"
+            >Organization &amp; Platform Charter</a
+          >, <a href="/governance/documentation-standards"
+            >Documentation Standards</a
+          >, <a href="/contribute">Contribution Policy</a>, and <a
+            href="/trademarks">Trademarks Policy</a
+          > are versioned independently using Semantic Versioning (<code
+            >MAJOR.MINOR.PATCH</code
+          >).
+        </p>
+        <div
+          class="table-scroll"
+          role="region"
+          tabindex="0"
+          aria-label="Table, 7. Versioning Foundational Documents"
+        >
+          <table>
+            <thead>
+              <tr>
+                <th>Version</th>
+                <th>Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>MAJOR</strong></td>
+                <td
+                  >Fundamental governance principles, authority boundaries, or
+                  execution models change.</td
+                >
+              </tr>
+              <tr>
+                <td><strong>MINOR</strong></td>
+                <td
+                  >New governance capabilities, materially expanded rules, or
+                  new durable subject boundaries are introduced.</td
+                >
+              </tr>
+              <tr>
+                <td><strong>PATCH</strong></td>
+                <td
+                  >Editorial, formatting, factual-correction, or clarification
+                  changes that do not alter policy.</td
+                >
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Every released version includes a changelog entry. A version enters
+          release history only when that version is published in canonical
+          repository history. Uncommitted candidates do not create historical
+          releases.
+        </p>
+        <p>
+          When one release contains changes of different levels, use the highest
+          applicable SemVer level. Changelog entries should distinguish
+          policy/capability changes from mechanical or editorial cleanup so the
+          version choice remains auditable.
+        </p>
+        <p>Governance documents are never silently modified.</p>
+        <h2 id="changelog">Changelog</h2>
+        <h3 id="100-2026-11-25">1.0.0 (2026-11-25)</h3>
+        <ul>
+          <li>
+            Initial version. Re-established on the Macro Evidence website. The
+            substance continues the earlier published version of this document.
+          </li>
+        </ul>
+      </article>
+    </div>
+  </section>
+</Layout>
