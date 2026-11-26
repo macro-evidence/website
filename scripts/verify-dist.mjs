@@ -59,6 +59,7 @@ const baseRoutes = [
   '/404',
   '/about',
   '/brand-assets',
+  '/code-of-conduct',
   '/contact',
   '/contribute',
   '/governance',
