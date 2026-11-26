@@ -1,7 +1,7 @@
 # 0005. Keep canonical records in their owning repositories, not website mirrors
 
-**Status:** Accepted
-**Date:** 2026-09-11
+**Status:** Superseded
+**Superseded by:** [Governance decision 0013](https://macro-evidence.com/governance/decisions/0013-consolidate-governance-publication-into-the-website-repository)
 
 ## Context
 

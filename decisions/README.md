@@ -1,8 +1,8 @@
 # Architecture Decision Records
 
-This directory contains technical and public-interface decisions specific to the Macro Evidence website. Decisions that genuinely apply across multiple Macro Evidence repositories or to the organization's structure belong in the [Governance decision log](https://github.com/macro-evidence/governance/tree/main/decisions).
+This directory contains technical and public-interface decisions specific to the Macro Evidence website. They form the Website decision series. Decisions that genuinely apply across multiple Macro Evidence repositories or to the organization's structure form the Governance decision series, published at [Governance decisions](https://macro-evidence.com/governance/decisions).
 
-The shared ADR contract—including numbering, filenames, references, lifecycle metadata, required structure, decision-boundary grammar, and index behavior—is defined in Macro Evidence's [Documentation Standards](https://github.com/macro-evidence/governance/blob/main/DOCUMENTATION_STANDARDS.md#5-architecture-decision-records).
+The shared ADR contract—including numbering, filenames, references, lifecycle metadata, required structure, decision-boundary grammar, and index behavior—is defined in Macro Evidence's [Documentation Standards](https://macro-evidence.com/governance/documentation-standards#5-architecture-decision-records).
 
 ## Decisions
 

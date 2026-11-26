@@ -15,6 +15,8 @@ Macro Data Observatory remains the flagship and foundational platform. The organ
 
 Canonical governance, policy, contribution, and security records remain authoritative in the repositories that own them. The website provides concise first-party orientation and explicit links to those canonical sources when deeper material is needed; it does not maintain a second publication copy of the record corpus.
 
+The third paragraph of this section and the last item under Consequences apply to records that remain owned by another repository. [Governance decision 0013](https://macro-evidence.com/governance/decisions/0013-consolidate-governance-publication-into-the-website-repository) makes this repository the canonical source of Macro Evidence's public governance content and publishes that content as first-party pages.
+
 ## Consequences
 
 - The website must stand on its own rather than function as a GitHub redirect.

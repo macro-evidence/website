@@ -20,6 +20,8 @@ Website-owned summaries or adaptations of organization material remain visitor-f
 
 Package metadata identifies the website software package as Apache-2.0 while repository documentation keeps visitor-content, identity, and third-party licensing boundaries explicit. The public `/licensing` route gives visitors a first-party orientation to the same boundaries. The production build carries the exact Apache-2.0, CC BY-SA 4.0, and Inter OFL texts under `/licenses/` together with the Inter attribution notice.
 
+The last sentence of the second paragraph of this section applies to records that remain owned by another repository. [Governance decision 0013](https://macro-evidence.com/governance/decisions/0013-consolidate-governance-publication-into-the-website-repository) makes this repository the canonical source of Macro Evidence's public governance content and publishes that content as first-party pages.
+
 ## Consequences
 
 - Software reuse, editorial-content reuse, and identity rights remain legible.
