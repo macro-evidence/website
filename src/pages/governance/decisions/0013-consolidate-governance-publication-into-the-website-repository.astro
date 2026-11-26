@@ -1,0 +1,366 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageIntro from '../../../components/PageIntro.astro';
+---
+
+<Layout
+  title="0013. Consolidate governance publication into the website repository | Macro Evidence"
+  description="Governance decision 0013: Consolidate governance publication into the website repository. Status: Accepted."
+>
+  <PageIntro
+    kicker="Governance decision"
+    title="0013. Consolidate governance publication into the website repository"
+    lead="Governance decision 0013 of the Macro Evidence Governance decision series."
+  />
+
+  <section class="section policy-page">
+    <div class="site-container reading policy-reading-wide">
+      <article class="policy-text">
+        <p class="policy-status">
+          <strong>Status:</strong>&#32;Accepted<br />&#32;<strong>Date:</strong
+          >&#32;2026-11-26
+        </p>
+        <h2 id="context">Context</h2>
+        <p>
+          Macro Evidence keeps its organization-level governance in a standalone
+          repository,&#32;<code>macro-evidence/governance</code>. That
+          repository holds the organization charter, the governance and
+          decision-making charter, the documentation standards, the contribution
+          policy, the trademarks policy, the contributor-agreement forms and
+          process documents, and the organization-level decision records.
+          Readers reach these records on GitHub. The organization website
+          at&#32;<code>macro-evidence.com</code>&#32;summarizes them and links
+          out to them.
+        </p>
+        <p>
+          Website decision 0005 chose that arrangement. It evaluated a pinned
+          mirror of governance records inside the website and rejected it. The
+          mirror duplicated a large document corpus, needed synchronization and
+          Markdown-publication machinery, and gave a repository-document reading
+          experience inside pages designed as an institutional website.
+        </p>
+        <p>
+          Governance exists to govern Macro Evidence. It is not an independent
+          software product with its own contributor community or release
+          lifecycle. A separate repository adds a second repository to
+          administer, a second set of settings and contributor entry points, a
+          cross-repository link for every policy reference, and a reading
+          experience that leaves the organization's own domain.
+        </p>
+        <p>Three alternatives were considered:</p>
+        <ol>
+          <li>
+            Keep two repositories and improve the links. This keeps the separate
+            administration and the departure from the organization's domain.
+          </li>
+          <li>
+            Mirror the governance Markdown into the website. Website decision
+            0005 rejected this approach, and the reasons still apply.
+          </li>
+          <li>
+            Keep Markdown as the source and render it in the website. This keeps
+            two authoring formats for one published page and adds a rendering
+            layer whose only purpose is to preserve the old format.
+          </li>
+        </ol>
+        <p>
+          The chosen option has no mirror, no second source and no rendering
+          layer. The published pages are the canonical text.
+        </p>
+        <h2 id="decision">Decision</h2>
+        <p>
+          Make&#32;<code>macro-evidence/website</code>&#32;the canonical source
+          of Macro Evidence's public governance content. Publish that content as
+          first-party pages on&#32;<code>macro-evidence.com</code>. Retire the
+          standalone&#32;<code>governance</code>&#32;repository after the
+          conditions below are met.
+        </p>
+        <p>
+          <strong>Why a separate repository is no longer needed.</strong
+          >&#32;Governance documents change rarely. They are maintained and
+          reviewed through the same process as the website. None of them needs
+          its own release process or contributor community. One repository is
+          simpler to administer and to verify.
+        </p>
+        <p>
+          <strong>Why the website repository.</strong>&#32;The website is the
+          organization's first-party institutional surface. Publishing
+          governance there lets Macro Evidence direct readers to its own domain
+          for its charter, governance, contribution policy, trademarks, legal
+          material and decisions. Each document has one canonical public
+          address.
+        </p>
+        <p>
+          <strong>Publication and infrastructure.</strong>&#32;Public
+          institutional publication and source-control infrastructure are
+          separate functions. The website repository carries the published
+          institutional documents. The&#32;<code>macro-evidence/.github</code
+          >&#32;repository continues to carry GitHub-specific infrastructure:
+          community-health files, issue and pull request templates, the
+          organization profile and the reusable workflows. This decision does
+          not move&#32;<code>.github</code>&#32;into the website repository.
+        </p>
+        <p>
+          The Code of Conduct is published at&#32;<code>/code-of-conduct</code>.
+          A complete distribution copy remains in&#32;<code>.github</code
+          >&#32;for GitHub's community-health surface. The website page is the
+          canonical reading version. Both copies change together when the policy
+          changes. The Contributor Covenant attribution and the credit to
+          Mozilla's code of conduct team stay with both.
+        </p>
+        <p>
+          <strong>Ownership and page structure.</strong>&#32;Each document has
+          one canonical page, written directly as an Astro page in the website
+          repository. There is no separate Markdown corpus, content repository,
+          mirror or synchronization mechanism.
+        </p>
+        <div
+          class="table-scroll"
+          role="region"
+          tabindex="0"
+          aria-label="Table, Decision"
+        >
+          <table>
+            <thead
+              ><tr
+                ><th>Document</th>
+                <th>Canonical address</th></tr
+              ></thead
+            ><tbody
+              ><tr
+                ><td>Organization &amp; Platform Charter</td>
+                <td><code>/governance/organization-charter</code></td></tr
+              >
+              <tr
+                ><td>Governance &amp; Decision-Making Charter</td>
+                <td><code>/governance/decision-making</code></td></tr
+              >
+              <tr
+                ><td>Documentation Standards</td>
+                <td><code>/governance/documentation-standards</code></td></tr
+              >
+              <tr
+                ><td>Contribution Policy</td>
+                <td><code>/contribute</code></td></tr
+              >
+              <tr
+                ><td>Trademarks Policy</td>
+                <td><code>/trademarks</code></td></tr
+              >
+              <tr
+                ><td>Code of Conduct</td>
+                <td><code>/code-of-conduct</code></td></tr
+              >
+              <tr
+                ><td>Governance decisions</td>
+                <td
+                  ><code>/governance/decisions</code>, with one page for each
+                  decision</td
+                ></tr
+              >
+              <tr
+                ><td>Contributor agreements</td>
+                <td
+                  ><code>/legal/contributor-agreements</code>&#32;and the pages
+                  below it</td
+                ></tr
+              ></tbody
+            >
+          </table>
+        </div>
+        <p>
+          The&#32;<code>/governance</code>&#32;page remains the entry point and
+          orientation page for governance. The&#32;<code>/about</code>&#32;page
+          remains an orientation page. No full policy text appears on more than
+          one page.
+        </p>
+        <p><strong>Existing policies and decisions.</strong></p>
+        <ul>
+          <li>
+            The twelve Governance decisions keep their numbers, titles, dates,
+            statuses, reasoning and successor relationships. Superseded
+            decisions stay visibly superseded. A statement that describes the
+            former repository arrangement is historical and stays as written.
+            Only broken or outdated links, factual errors and necessary location
+            references are corrected.
+          </li>
+          <li>
+            The five foundational policy documents continue in substance without
+            interruption. Each is re-established on the website at version
+            1.0.0. This is a one-time re-baseline for the new publication home.
+            It is not a MAJOR release. Earlier changelog entries are not carried
+            over. The release date of a re-established document is the date its
+            page merges into the&#32;<code>main</code>&#32;branch of the website
+            repository.
+          </li>
+          <li>
+            A re-established document differs from its earlier published version
+            only in repository and location references, in the decision-series
+            language below, and in the addition of the&#32;<code>ci</code
+            >&#32;commit type to the supported list. A correction beyond these
+            is stated in the changelog entry of the affected document.
+          </li>
+          <li>
+            The contributor-agreement documents keep their versions, status and
+            wording.
+          </li>
+        </ul>
+        <p>
+          <strong>Decision series.</strong>&#32;Two decision series exist in the
+          website repository. The Governance series holds organization-level
+          decisions and is published under&#32;<code>/governance/decisions</code
+          >. The Website series holds technical and public-interface decisions
+          specific to the website and stays in the&#32;<code>decisions/</code
+          >&#32;directory as Markdown files. Each series keeps its own numbering
+          and its own index. No series is renumbered. A decision is cited with
+          its series, for example Governance decision 0013 or Website decision
+          0005. Documentation Standards and the Governance &amp; Decision-Making
+          Charter state this rule.
+        </p>
+        <p>
+          <strong>Maintenance and contribution boundary.</strong>&#32;Macro
+          Evidence maintains the governance pages through the website
+          repository. A change to a governance page follows the Contribution
+          Policy, the documentation standards and the website verification.
+          External suggestions are welcome as proposals. Acceptance and
+          authority remain with Macro Evidence. The merge requirement for
+          external copyrightable contributions applies to governance content in
+          the website repository. This decision does not change the Contribution
+          Policy.
+        </p>
+        <p>
+          <strong>Licensing and legal documents.</strong>&#32;The website
+          repository keeps Apache-2.0 for software and CC BY-SA 4.0 for
+          human-readable institutional content. Official identity assets and
+          third-party material keep their separate terms. The Individual and
+          Entity Contributor License Agreement reference forms are adapted from
+          Harmony Contributor License Agreement Version 1.0. They remain under
+          CC BY 3.0 with their attribution and provenance notices, and&#32;<code
+            >LICENSING.md</code
+          >&#32;records this exception at file level. The Apache-2.0 grant is
+          not applied to legal-form text because that text sits in a source
+          file. Publishing the forms as pages changes no operative wording,
+          version or provenance. The forms stay public reference forms and are
+          not executed agreements. Executed agreements, signatures, private
+          contact details, entity schedules and contributor registers are never
+          published and never stored in the repository. The hash and
+          execution-record practices of the contributor-agreement process are
+          unchanged.
+        </p>
+        <p>
+          <strong>Link migration.</strong>&#32;Every reference to the&#32;<code
+            >governance</code
+          >&#32;repository in the controlled Macro Evidence repositories is
+          inventoried and classified. Each reference is corrected, kept
+          deliberately, or removed with a stated reason. Readers of policy text
+          are directed to first-party addresses. A reference that records a
+          historical fact, such as a decision that describes the former
+          repository arrangement, stays as written. Where a source-code link
+          remains useful, it points to the website repository and its current
+          path.
+        </p>
+        <p>
+          <strong>Retirement of the Governance repository.</strong
+          >&#32;The&#32;<code>governance</code>&#32;repository is retired by
+          deletion. It does not become a public archive or a second maintained
+          source. Retirement happens only when all of these hold:
+        </p>
+        <ul>
+          <li>all necessary content is published on the website;</li>
+          <li>all organization-level decisions are checked;</li>
+          <li>licensing and privacy boundaries are verified;</li>
+          <li>every controlled repository is inspected and updated;</li>
+          <li>the generated public routes work;</li>
+          <li>the deployment is accepted;</li>
+          <li>no active reference requires the old repository; and</li>
+          <li>the maintainer gives separate final approval.</li>
+        </ul>
+        <p>
+          A temporary recovery export may be kept as a safety measure. It does
+          not enter the website repository and is not published. Its retention
+          and disposal are decided before deletion.
+        </p>
+        <p>
+          <strong>Transition.</strong>&#32;Until a document is published on the
+          production site at its address, the copy in the&#32;<code
+            >governance</code
+          >&#32;repository remains the canonical text for that document. When
+          the page is published, the website page becomes canonical and the
+          former copy is no longer maintained.
+        </p>
+        <p><strong>Relation to earlier decisions.</strong></p>
+        <ul>
+          <li>
+            This decision supersedes Website decision 0005. The principle that
+            records owned by another repository stay there carries forward for
+            records that remain elsewhere, such as the community-health files
+            and the security-reporting policy file in&#32;<code
+              >macro-evidence/.github</code
+            >&#32;and the technical documentation in&#32;<code
+              >macro-evidence/macro-data-observatory</code
+            >. The website links to those records and does not mirror them.
+          </li>
+          <li>
+            This decision narrows Website decision 0001 and Website decision
+            0003 where they say that canonical governance, policy and
+            contribution records stay in the repositories that own them and that
+            the website links to them. For the governance content named above,
+            the website repository is the owner and the website publishes the
+            full text.
+          </li>
+          <li>
+            Governance decisions 0001 to 0012 stay in force with their recorded
+            statuses. Governance decision 0012 and the&#32;<code>.github</code
+            >&#32;workflows are not changed.
+          </li>
+        </ul>
+        <h2 id="consequences">Consequences</h2>
+        <ul>
+          <li>
+            Macro Evidence administers one repository fewer: one set of
+            settings, rulesets, merge rules, advisories and contributor entry
+            points.
+          </li>
+          <li>
+            Each policy has one address on the organization's own domain.
+            Readers do not need to leave the domain to read the organization's
+            governance.
+          </li>
+          <li>
+            Governance changes ship through the website release and share its
+            deployment boundary. A defect in one can delay the other.
+          </li>
+          <li>
+            Policy changes become changes to page source. The pages must be
+            verified at phone, tablet and desktop widths, and the verification
+            scripts must list every route.
+          </li>
+          <li>
+            The Git history of the&#32;<code>governance</code>&#32;repository is
+            not imported. After retirement, earlier versions of the policies and
+            that repository's commit history are no longer published. The
+            decision record, its numbering and its statuses preserve the
+            decision history.
+          </li>
+          <li>
+            Version numbers reset for the five re-established documents. A
+            citation of an earlier version number, such as Charter 1.3.1, refers
+            to the retired publication.
+          </li>
+          <li>
+            A route that the verification scripts do not know fails the release
+            verification. This is intended.
+          </li>
+          <li>
+            A material change to this publication model needs a new decision.
+          </li>
+        </ul>
+      </article>
+      <div class="reference-links">
+        <a class="text-link" href="/governance/decisions">
+          All Governance decisions →
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

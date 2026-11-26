@@ -1,0 +1,150 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageIntro from '../../../components/PageIntro.astro';
+---
+
+<Layout
+  title="0007. Keep Content Signals intentionally unspecified | Macro Evidence"
+  description="Governance decision 0007: Keep Content Signals intentionally unspecified. Status: Accepted."
+>
+  <PageIntro
+    kicker="Governance decision"
+    title="0007. Keep Content Signals intentionally unspecified"
+    lead="Governance decision 0007 of the Macro Evidence Governance decision series."
+  />
+
+  <section class="section policy-page">
+    <div class="site-container reading policy-reading-wide">
+      <article class="policy-text">
+        <p class="policy-status">
+          <strong>Status:</strong>&#32;Accepted<br />&#32;<strong>Date:</strong
+          >&#32;2026-09-24
+        </p>
+        <h2 id="context">Context</h2>
+        <p>
+          Macro Evidence publishes public material under several materially
+          different rights instruments. Software repositories may use software
+          licenses; governance and other documentation may use open-content
+          licenses; official identity assets and trademarks have separate rules;
+          and third-party material remains subject to its own terms.
+        </p>
+        <p>
+          Cloudflare's&#32;<a
+            href="https://developers.cloudflare.com/bots/additional-configurations/managed-robots-txt/#content-signals-policy"
+            >Content Signals</a
+          >&#32;mechanism expresses machine-readable positions for uses such
+          as&#32;<code>search</code>,&#32;<code>ai-input</code>, and&#32;<code
+            >ai-train</code
+          >. As of 2026-09-24, Cloudflare documents an omitted directive as
+          neither granting nor restricting permission through Content Signals
+          for that use. An organization-wide signal would therefore compress
+          several distinct rights classes into one machine-readable statement
+          unless Macro Evidence first has a defensible mapping from each class
+          of material to the available directives.
+        </p>
+        <p>
+          Cloudflare also documents managed features that can emit signals on an
+          origin's behalf.&#32;<a
+            href="https://developers.cloudflare.com/fundamentals/reference/markdown-for-agents/"
+            >Markdown for Agents</a
+          >&#32;currently preserves an origin&#32;<code>Content-Signal</code
+          >&#32;header when present and otherwise supplies its own defaults.
+          That behavior makes infrastructure configuration relevant to whether a
+          deliberate non-assertion remains a non-assertion in practice.
+        </p>
+        <p>Four broad approaches are available:</p>
+        <ul>
+          <li>
+            publish permissive organization-wide signals, which are easy for
+            automated consumers to interpret but may communicate permission more
+            broadly than the underlying rights instruments support;
+          </li>
+          <li>
+            publish restrictive organization-wide signals, which make a strong
+            reservation clear but may communicate a more restrictive position
+            than Macro Evidence's open licenses and public-good posture warrant;
+          </li>
+          <li>
+            publish content-specific signals, which could be more precise but
+            require a stable classification/mapping architecture and additional
+            operational complexity; or
+          </li>
+          <li>
+            deliberately make no Content Signals assertion for now, leaving the
+            applicable licenses, policies, and third-party terms authoritative
+            while accepting less machine-readable guidance.
+          </li>
+        </ul>
+        <p>
+          Non-assertion is only meaningful if infrastructure does not silently
+          replace it with vendor defaults. Platform features that can inject
+          Content Signals therefore require review before they are enabled.
+        </p>
+        <h2 id="decision">Decision</h2>
+        <p>
+          Do not publish one organization-wide affirmative or negative Content
+          Signals rights assertion at this time.
+        </p>
+        <p>
+          Until Macro Evidence has a stable, evidence-backed mapping from its
+          distinct public-content rights classes to the available Content
+          Signals directives, leave&#32;<code>search</code>,&#32;<code
+            >ai-input</code
+          >,&#32;<code>ai-train</code>, and the experimental&#32;<code>use</code
+          >&#32;extension unspecified through this mechanism.
+        </p>
+        <p>
+          This is a deliberate non-assertion within the Content Signals
+          mechanism. It does not itself grant permission, prohibit use, alter
+          repository or content licenses, change trademark policy, classify a
+          crawler as trustworthy or malicious, or change ordinary crawl access.
+        </p>
+        <p>
+          Do not enable a managed platform feature that would substitute vendor
+          Content Signals defaults for this deliberate non-assertion without
+          first reviewing those defaults against the applicable rights classes
+          and this decision.
+        </p>
+        <p>
+          Revisit this decision when evidence supports a defensible explicit
+          mapping, including when the mechanism materially stabilizes or
+          changes, Macro Evidence's rights classes change, content-specific
+          signaling becomes operationally proportionate, or reliable evidence
+          shows that an explicit signal would materially improve rights
+          expression without contradicting governing terms.
+        </p>
+        <h2 id="consequences">Consequences</h2>
+        <ul>
+          <li>
+            Existing licenses, policies, and third-party terms remain
+            authoritative within their own scopes.
+          </li>
+          <li>
+            Macro Evidence avoids making a blanket machine-readable statement
+            that may be broader or narrower than the rights actually attached to
+            different public materials.
+          </li>
+          <li>
+            Automated consumers receive less organization-wide machine-readable
+            guidance until a more precise mapping is justified.
+          </li>
+          <li>
+            Platform features that inject default Content Signals cannot be
+            treated as neutral infrastructure changes; their defaults must be
+            reviewed before activation.
+          </li>
+          <li>
+            A future explicit organization-wide or content-specific signaling
+            policy requires a new evidence-based decision rather than a
+            website-only configuration change.
+          </li>
+        </ul>
+      </article>
+      <div class="reference-links">
+        <a class="text-link" href="/governance/decisions">
+          All Governance decisions →
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

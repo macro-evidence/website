@@ -1,0 +1,173 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageIntro from '../../../components/PageIntro.astro';
+---
+
+<Layout
+  title="0009. Adopt a Harmony-based contributor-rights system | Macro Evidence"
+  description="Governance decision 0009: Adopt a Harmony-based contributor-rights system. Status: Accepted."
+>
+  <PageIntro
+    kicker="Governance decision"
+    title="0009. Adopt a Harmony-based contributor-rights system"
+    lead="Governance decision 0009 of the Macro Evidence Governance decision series."
+  />
+
+  <section class="section policy-page">
+    <div class="site-container reading policy-reading-wide">
+      <article class="policy-text">
+        <p class="policy-status">
+          <strong>Status:</strong>&#32;Accepted<br />&#32;<strong>Date:</strong
+          >&#32;2026-09-24
+        </p>
+        <h2 id="context">Context</h2>
+        <p>
+          Decision 0006 establishes the organization-level requirement to obtain
+          contributor-rights coverage before merging an external copyrightable
+          contribution when the ordinary repository license does not provide the
+          rights needed for long-term stewardship and possible additional
+          licensing. The next durable question is which contributor-agreement
+          architecture should provide that coverage.
+        </p>
+        <p>
+          The legal architecture needs to preserve contributor ownership,
+          support both natural-person and entity-controlled rights, provide the
+          rights required by decision 0006, and remain explicit about the
+          distinction between the Macro Evidence project identity and the legal
+          contracting party identified in the agreement forms. It also needs a
+          maintainable provenance boundary so future edits can be traced to a
+          standard source rather than becoming an unexplained bespoke contract.
+        </p>
+        <p>
+          Harmony Contributor License Agreement Version 1.0 provides the
+          contractual base. Its Individual and Entity forms,
+          contributor-ownership model, and Outbound Option Five provide the
+          required general structure. Apache Software Foundation contributor
+          agreements are used only as a design reference for safeguards such as
+          originality, third-party-material disclosure, employer/entity
+          authority, continuing correction, and private-record handling.
+          Apache-specific institutional language is not adopted.
+        </p>
+        <h2 id="decision">Decision</h2>
+        <p>
+          Adopt a Harmony-based contributor-rights architecture for version
+          1.0.0 with bounded Macro Evidence-specific additions documented
+          in&#32;<a
+            href="https://github.com/macro-evidence/governance/blob/main/legal/cla/PROVENANCE_AND_CUSTOMIZATION.md"
+            ><code>legal/cla/PROVENANCE_AND_CUSTOMIZATION.md</code></a
+          >.
+        </p>
+        <p>The architecture is:</p>
+        <ul>
+          <li>
+            maintain Individual and Entity Contributor License Agreement forms;
+          </li>
+          <li>
+            require an ICLA for each natural person whose covered external
+            copyrightable contribution may be merged;
+          </li>
+          <li>
+            require an ECLA or another documented sufficient rights path when an
+            employer, company, institution, or other legal entity owns or may
+            control relevant rights;
+          </li>
+          <li>
+            use a contributor license rather than copyright assignment as the
+            default rights model;
+          </li>
+          <li>use Harmony Outbound Option Five;</li>
+          <li>
+            omit the optional additional Harmony Media-licence list for version
+            1.0.0;
+          </li>
+          <li>
+            retain contributor ownership while obtaining the approved copyright,
+            patent, database-right, sublicensing, and relicensing grants;
+          </li>
+          <li>
+            include bounded safeguards for originality, third-party material,
+            employer/entity authority, continuing correction, privacy, no
+            agency, and contributor-side responsibility;
+          </li>
+          <li>
+            distinguish the Macro Evidence project identity from the present
+            contracting party identified in the agreement forms and preserve a
+            documented successor path without representing an unestablished
+            legal entity as already existing;
+          </li>
+          <li>
+            use the laws of India as the governing law for agreement version
+            1.0.0;
+          </li>
+          <li>
+            require an approved signed execution record rather than treating a
+            GitHub checkbox, pull-request comment, typed name, DCO sign-off, or
+            ordinary email acknowledgement as the agreement itself; and
+          </li>
+          <li>
+            keep executed agreements, signatures, private addresses, private
+            contacts, identity and authority evidence, account-binding evidence,
+            entity schedules, execution evidence, and the contributor-rights
+            register private.
+          </li>
+        </ul>
+        <p>
+          The public agreement forms and the public contributor-agreement
+          process define the operative legal and administrative details. Future
+          changes to the substantive rights grant, outbound-license option,
+          responsibility architecture, governing law, assignment or successor
+          mechanism, or execution standard require renewed governance review
+          and, where existing signatories' terms would change, a new agreement
+          version.
+        </p>
+        <p>
+          Operational GitHub merge enforcement is a separate governance
+          boundary. Its security invariants, activation requirements, and
+          fail-closed behavior are recorded in decision 0012 and&#32;<a
+            href="https://github.com/macro-evidence/governance/blob/main/legal/cla/GITHUB_ENFORCEMENT.md"
+            ><code>legal/cla/GITHUB_ENFORCEMENT.md</code></a
+          >. This ADR does not declare that the automated merge gate is active.
+        </p>
+        <h2 id="consequences">Consequences</h2>
+        <ul>
+          <li>
+            Macro Evidence has a defined standard agreement family instead of an
+            open-ended bespoke drafting model.
+          </li>
+          <li>
+            Contributors retain ownership while the approved agreement provides
+            the rights needed for long-term stewardship and possible additional
+            licensing.
+          </li>
+          <li>
+            Natural-person and entity-controlled rights are handled through
+            distinct but compatible agreement paths.
+          </li>
+          <li>
+            The public forms retain their Harmony provenance and their separate
+            CC BY 3.0 licensing boundary.
+          </li>
+          <li>
+            Private execution and contributor records remain outside the public
+            repository.
+          </li>
+          <li>
+            Operational merge enforcement can evolve without changing the
+            substantive legal terms of the agreement merely because its
+            implementation changes.
+          </li>
+          <li>
+            The contributor-rights mechanism remains unavailable for external
+            copyrightable merge until the separate activation requirements are
+            satisfied.
+          </li>
+        </ul>
+      </article>
+      <div class="reference-links">
+        <a class="text-link" href="/governance/decisions">
+          All Governance decisions →
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

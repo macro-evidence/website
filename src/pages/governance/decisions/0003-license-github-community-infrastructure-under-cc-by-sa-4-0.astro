@@ -1,0 +1,150 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageIntro from '../../../components/PageIntro.astro';
+---
+
+<Layout
+  title="0003. License .github community infrastructure under CC BY-SA 4.0 | Macro Evidence"
+  description="Governance decision 0003: License .github community infrastructure under CC BY-SA 4.0. Status: Superseded."
+>
+  <PageIntro
+    kicker="Governance decision"
+    title="0003. License .github community infrastructure under CC BY-SA 4.0"
+    lead="Governance decision 0003 of the Macro Evidence Governance decision series."
+  />
+
+  <section class="section policy-page">
+    <div class="site-container reading policy-reading-wide">
+      <article class="policy-text">
+        <p class="policy-status">
+          <strong>Status:</strong>&#32;Superseded<br />&#32;<strong
+            >Superseded by:</strong
+          >&#32;<a
+            href="/governance/decisions/0011-use-mixed-licensing-for-github-community-content-and-executable-automation"
+            >decision 0011</a
+          >
+        </p>
+        <h2 id="context">Context</h2>
+        <p>
+          The&#32;<code>macro-evidence/.github</code>&#32;repository provides
+          Macro Evidence's public organization profile and organization-wide
+          default community health infrastructure, including contribution
+          guidance, security reporting guidance, pull request and issue
+          templates, and contributor conduct policy.
+        </p>
+        <p>
+          The repository has been published under Creative Commons Attribution
+          4.0 International (CC BY 4.0). That license permits reuse, adaptation,
+          redistribution, and commercial use subject to its license conditions,
+          but does not require shared adaptations to remain under reciprocal
+          licensing terms.
+        </p>
+        <p>
+          Macro Evidence reviewed whether this repository should remain
+          maximally permissive or operate as a reciprocal open-content commons.
+          The review considered the repository's purpose, downstream-user
+          clarity, current contribution history, third-party provenance,
+          commercial reuse, licensing simplicity, and Macro Evidence's broader
+          separation between rights in open work and rights in organizational
+          identity.
+        </p>
+        <p>
+          The repository is primarily community and participation infrastructure
+          rather than product software. Its substantive materials define how
+          people encounter, contribute to, report problems to, and participate
+          in Macro Evidence. Small declarative GitHub configuration files also
+          exist in the repository, but no material software codebase has been
+          identified that would independently justify a software-specific
+          repository license.
+        </p>
+        <p>
+          Repository history reviewed for this decision did not identify
+          external substantive contributions requiring separate relicensing
+          permission. The current Code of Conduct incorporates third-party
+          Contributor Covenant material and is handled separately rather than
+          being silently relicensed by this decision.
+        </p>
+        <p>
+          Existing CC BY 4.0 grants remain valid under their terms. This
+          decision does not revoke or retroactively replace those grants.
+        </p>
+        <h2 id="decision">Decision</h2>
+        <p>
+          Beginning with implementation of this decision, publish the
+          maintained&#32;<code>macro-evidence/.github</code>&#32;repository and
+          future revisions under Creative Commons Attribution-ShareAlike 4.0
+          International (CC BY-SA 4.0).
+        </p>
+        <p>
+          Macro Evidence treats its organization-wide community and
+          participation infrastructure as a reciprocal open-content commons. The
+          material remains available for use, redistribution, adaptation, and
+          commercial reuse, while adaptations that are shared must comply with
+          the ShareAlike requirements of CC BY-SA 4.0 or an applicable
+          compatible license.
+        </p>
+        <p>
+          The repository's committed&#32;<code>LICENSE</code>&#32;remains the
+          canonical license text for the current repository state.
+        </p>
+        <p>
+          Macro Evidence's trademarks, names, marks, visual identity, official
+          identifiers, and official status remain governed separately by the
+          Trademarks Policy. Rights granted by the repository license do not
+          themselves grant permission to present a fork, adaptation, service, or
+          other use as official Macro Evidence.
+        </p>
+        <p>
+          This decision applies only to&#32;<code>macro-evidence/.github</code>.
+          It does not change the licenses of&#32;<code
+            >macro-evidence/governance</code
+          >,&#32;<code>macro-evidence/website</code>,&#32;<code
+            >macro-evidence/macro-data-observatory</code
+          >, data obtained or produced through Macro Data Observatory, or Macro
+          Evidence's trademark and identity rights.
+        </p>
+        <h2 id="consequences">Consequences</h2>
+        <ul>
+          <li>
+            The&#32;<code>.github</code>&#32;repository moves from CC BY 4.0 to
+            CC BY-SA 4.0 for its maintained current and future releases.
+          </li>
+          <li>
+            Commercial use, redistribution, and adaptation remain permitted
+            under CC BY-SA 4.0.
+          </li>
+          <li>Shared adaptations are subject to ShareAlike requirements.</li>
+          <li>
+            Downstream users receive one repository-wide content-licensing model
+            rather than needing different default licenses for individual
+            community-health materials.
+          </li>
+          <li>
+            Historical material already made available under CC BY 4.0 remains
+            usable under those previously granted terms.
+          </li>
+          <li>
+            Third-party material is not relicensed merely by changing the
+            repository default; its applicable upstream terms must continue to
+            be respected.
+          </li>
+          <li>
+            The organization-wide Code of Conduct remains a separate policy
+            decision and may be revised or replaced independently of this
+            licensing decision.
+          </li>
+          <li>
+            The website, MDO, governance, data, and trademark licensing
+            questions remain governed by their own existing decisions and
+            policies.
+          </li>
+        </ul>
+      </article>
+      <div class="reference-links">
+        <a class="text-link" href="/governance/decisions">
+          All Governance decisions →
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,167 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageIntro from '../../../components/PageIntro.astro';
+---
+
+<Layout
+  title="0004. Adopt tailored Contributor Covenant 3.0 | Macro Evidence"
+  description="Governance decision 0004: Adopt tailored Contributor Covenant 3.0. Status: Accepted."
+>
+  <PageIntro
+    kicker="Governance decision"
+    title="0004. Adopt tailored Contributor Covenant 3.0"
+    lead="Governance decision 0004 of the Macro Evidence Governance decision series."
+  />
+
+  <section class="section policy-page">
+    <div class="site-container reading policy-reading-wide">
+      <article class="policy-text">
+        <p class="policy-status">
+          <strong>Status:</strong>&#32;Accepted<br />&#32;<strong>Date:</strong
+          >&#32;2026-08-21
+        </p>
+        <h2 id="context">Context</h2>
+        <p>
+          Macro Evidence uses an organization-wide default Code of Conduct
+          from&#32;<code>macro-evidence/.github</code>&#32;for repositories that
+          do not publish their own conduct policy.
+        </p>
+        <p>
+          The current default is an adaptation of Contributor Covenant 2.1. It
+          established an appropriate baseline for community conduct, but parts
+          of its enforcement language no longer describe Macro Evidence's
+          operating model accurately. In particular, it repeatedly assigns
+          enforcement to plural community leaders, promises prompt
+          investigation, and describes an enforcement sequence more rigidly than
+          Macro Evidence can responsibly guarantee at its current
+          single-maintainer capacity.
+        </p>
+        <p>
+          Macro Evidence reviewed whether to retain and further adapt
+          Contributor Covenant 2.1 or move to Contributor Covenant 3.0.
+        </p>
+        <p>
+          Contributor Covenant 3.0 more clearly distinguishes ordinary community
+          conflict from Code of Conduct violations, treats its enforcement
+          ladder as a guideline rather than a mandatory sequence, and expressly
+          anticipates community-specific reporting and enforcement procedures.
+          Its published guidance also supports enforcement by a single
+          responsible individual in smaller communities.
+        </p>
+        <p>
+          Contributor Covenant 3.0 is licensed under Creative Commons
+          Attribution-ShareAlike 4.0 International (CC BY-SA 4.0). Governance
+          decision 0003 separately establishes CC BY-SA 4.0 as the licensing
+          direction for the&#32;<code>.github</code>&#32;community
+          infrastructure. The conduct-policy decision and repository-license
+          decision remain independently revisitable.
+        </p>
+        <h2 id="decision">Decision</h2>
+        <p>
+          Adopt an appropriately tailored Contributor Covenant 3.0 as Macro
+          Evidence's organization-wide default Code of Conduct.
+        </p>
+        <p>
+          The adaptation will preserve the substantive community standards,
+          scope, and attribution of Contributor Covenant 3.0 while tailoring
+          reporting and enforcement language to Macro Evidence's actual
+          operating capacity.
+        </p>
+        <p>In particular, the implementation will:</p>
+        <ul>
+          <li>
+            provide a private, documented route for reporting possible Code of
+            Conduct violations;
+          </li>
+          <li>
+            describe enforcement in terms consistent with Macro Evidence's
+            current single-maintainer capacity rather than implying that a
+            moderation committee or multiple community leaders exist;
+          </li>
+          <li>
+            avoid promising a response-time or investigation SLA that Macro
+            Evidence cannot reliably guarantee;
+          </li>
+          <li>
+            treat the Contributor Covenant enforcement ladder as guidance that
+            may be applied proportionately rather than as a mandatory sequence;
+          </li>
+          <li>
+            preserve appropriate confidentiality and discretion in investigation
+            and enforcement;
+          </li>
+          <li>
+            retain Contributor Covenant 3.0's scope boundary for community
+            spaces and official representation rather than extending ordinary
+            Code of Conduct enforcement to unrelated private or external
+            conduct; and
+          </li>
+          <li>
+            retain the required Contributor Covenant attribution and applicable
+            CC BY-SA 4.0 licensing terms.
+          </li>
+        </ul>
+        <p>
+          The organization-wide default applies where GitHub's
+          community-health-file precedence makes it applicable. A repository may
+          publish its own Code of Conduct when repository-specific circumstances
+          justify one.
+        </p>
+        <p>
+          Adoption is pinned to Contributor Covenant version 3.0. A later
+          Contributor Covenant release is not adopted automatically and requires
+          separate review before replacing this policy.
+        </p>
+        <h2 id="consequences">Consequences</h2>
+        <ul>
+          <li>
+            The existing Contributor Covenant 2.1-based organization-wide
+            default will be replaced by a Contributor Covenant 3.0-based policy.
+          </li>
+          <li>
+            Macro Evidence retains a recognized external conduct framework while
+            adapting operational language to what the organization can actually
+            support.
+          </li>
+          <li>
+            The policy will no longer imply the existence of a moderation
+            committee or multiple enforcement leaders at the current stage.
+          </li>
+          <li>
+            The policy will not promise a guaranteed acknowledgement,
+            investigation, or resolution timeframe.
+          </li>
+          <li>
+            Enforcement remains capable of escalating directly when severity
+            warrants it; the published ladder is guidance rather than a required
+            progression through every step.
+          </li>
+          <li>
+            Conduct outside community spaces remains outside the policy's
+            ordinary enforcement scope unless an individual is officially
+            representing Macro Evidence, consistent with the adopted framework's
+            scope.
+          </li>
+          <li>
+            Repository-specific conduct policies may override the
+            organization-wide default where GitHub's precedence rules apply.
+          </li>
+          <li>
+            Contributor Covenant attribution and CC BY-SA 4.0 obligations remain
+            part of the adapted policy.
+          </li>
+          <li>
+            Governance decision 0003 governs&#32;<code>.github</code
+            >&#32;repository licensing separately; changing or superseding
+            either decision does not automatically supersede the other.
+          </li>
+        </ul>
+      </article>
+      <div class="reference-links">
+        <a class="text-link" href="/governance/decisions">
+          All Governance decisions →
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

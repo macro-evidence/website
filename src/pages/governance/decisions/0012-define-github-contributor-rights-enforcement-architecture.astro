@@ -1,0 +1,165 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageIntro from '../../../components/PageIntro.astro';
+---
+
+<Layout
+  title="0012. Define GitHub contributor-rights enforcement architecture | Macro Evidence"
+  description="Governance decision 0012: Define GitHub contributor-rights enforcement architecture. Status: Accepted."
+>
+  <PageIntro
+    kicker="Governance decision"
+    title="0012. Define GitHub contributor-rights enforcement architecture"
+    lead="Governance decision 0012 of the Macro Evidence Governance decision series."
+  />
+
+  <section class="section policy-page">
+    <div class="site-container reading policy-reading-wide">
+      <article class="policy-text">
+        <p class="policy-status">
+          <strong>Status:</strong>&#32;Accepted<br />&#32;<strong>Date:</strong
+          >&#32;2026-09-24
+        </p>
+        <h2 id="context">Context</h2>
+        <p>
+          Decision 0009 defines the contributor-rights legal architecture, but
+          an executed agreement and an automated merge control solve different
+          problems. The merge control must derive a current, non-sensitive
+          rights-coverage result from private records without exposing agreement
+          records or allowing repository contributors to influence the result
+          through pull-request-controlled inputs.
+        </p>
+        <p>
+          The proposed implementation uses a narrowly privileged GitHub workflow
+          to publish a derived&#32;<code>Contributor rights coverage</code
+          >&#32;status to the exact pull-request head commit. Human contributor
+          coverage is derived from private records and expires automatically.
+          Non-human system actors and rare pull-request-specific exceptions
+          require exact repository and account binding and bounded validity.
+          Changes in account control, agreement status, provenance, or the
+          private source of truth must invalidate stale green statuses before an
+          affected pull request can merge.
+        </p>
+        <p>
+          The implementation is security-sensitive and depends on GitHub event
+          semantics, token permissions, required-status configuration,
+          repository rules, and hosted runtime behavior. Those assumptions must
+          be verified in the target repositories before activation.
+        </p>
+        <h2 id="decision">Decision</h2>
+        <p>
+          Adopt the following enforcement architecture as the operational
+          design, subject to hosted verification and activation approval:
+        </p>
+        <ul>
+          <li>
+            treat executed contributor agreements as authoritative for the
+            contractual rights they grant, with the private contributor-rights
+            register serving as the administrative source of current coverage
+            state;
+          </li>
+          <li>
+            expose only a derived, non-sensitive coverage result to GitHub;
+          </li>
+          <li>
+            bind persistent human coverage to the contributor's immutable GitHub
+            numeric account identifier and a time-bounded verification record;
+          </li>
+          <li>
+            require exact repository binding for repository-specific coverage;
+          </li>
+          <li>
+            handle approved non-human system actors through a separately
+            documented, exact actor-and-repository path rather than a general
+            bot bypass;
+          </li>
+          <li>
+            allow any exceptional non-CLA path only when cryptographically bound
+            to the exact repository, pull request, head commit, and short
+            expiry;
+          </li>
+          <li>
+            run the privileged verification path from trusted default-branch
+            code and organization-controlled configuration;
+          </li>
+          <li>
+            grant the minimum GitHub token permission required to publish the
+            derived status;
+          </li>
+          <li>
+            publish the merge-control result to the exact pull-request head
+            commit rather than relying on a base-context workflow check;
+          </li>
+          <li>
+            require repository rules to require the exact observed status and
+            prevent another authorized status publisher from spoofing that
+            context;
+          </li>
+          <li>
+            fail closed when rights coverage cannot be established, the status
+            cannot be published or bound correctly, or a material enforcement
+            assumption is not verified; and
+          </li>
+          <li>
+            require suspension, expiry, account revalidation, or key-rotation
+            events to trigger stale-status revalidation before affected pull
+            requests can merge.
+          </li>
+        </ul>
+        <p>
+          The detailed security invariants and configuration requirements are
+          maintained in&#32;<a
+            href="https://github.com/macro-evidence/governance/blob/main/legal/cla/GITHUB_ENFORCEMENT.md"
+            ><code>legal/cla/GITHUB_ENFORCEMENT.md</code></a
+          >. The contributor-agreement process remains the canonical owner of
+          execution, private-record, suspension, and legal administration. This
+          ADR does not activate the merge gate in any repository.
+        </p>
+        <p>
+          Activation requires, at minimum, a hosted fork fixture demonstrating
+          exact-head status publication, verification of the applicable GitHub
+          Actions event and token semantics, repository rules requiring the
+          exact trusted status, an inventory of other authorized status
+          publishers, verification of non-human actor paths where applicable,
+          and a demonstrated absence of an ordinary bypass path. GitHub merge
+          queue remains disabled for repositories relying on this version 1 gate
+          unless an equivalent&#32;<code>merge_group</code>&#32;path is
+          separately reviewed and hosted-tested.
+        </p>
+        <h2 id="consequences">Consequences</h2>
+        <ul>
+          <li>
+            External copyrightable contributions remain merge-blocked until the
+            legal coverage and operational enforcement prerequisites are both
+            satisfied.
+          </li>
+          <li>
+            Public GitHub data reveals only the derived merge-control result
+            rather than the underlying agreement or identity records.
+          </li>
+          <li>
+            The design adds GitHub Actions, repository-rule, account-binding,
+            expiry, revalidation, and status-publication dependencies that must
+            be maintained and reverified when platform behavior materially
+            changes.
+          </li>
+          <li>
+            The enforcement layer can change independently of the legal
+            agreement terms when its security invariants and activation boundary
+            remain intact.
+          </li>
+          <li>
+            A material change to the trust boundary, rights-coverage semantics,
+            token domains, bypass model, or required status source requires
+            renewed governance review.
+          </li>
+        </ul>
+      </article>
+      <div class="reference-links">
+        <a class="text-link" href="/governance/decisions">
+          All Governance decisions →
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

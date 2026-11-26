@@ -1,0 +1,109 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageIntro from '../../../components/PageIntro.astro';
+---
+
+<Layout
+  title="0010. Preserve the governance CC BY-SA default with explicit legal-form exceptions | Macro Evidence"
+  description="Governance decision 0010: Preserve the governance CC BY-SA default with explicit legal-form exceptions. Status: Accepted."
+>
+  <PageIntro
+    kicker="Governance decision"
+    title="0010. Preserve the governance CC BY-SA default with explicit legal-form exceptions"
+    lead="Governance decision 0010 of the Macro Evidence Governance decision series."
+  />
+
+  <section class="section policy-page">
+    <div class="site-container reading policy-reading-wide">
+      <article class="policy-text">
+        <p class="policy-status">
+          <strong>Status:</strong>&#32;Accepted<br />&#32;<strong>Date:</strong
+          >&#32;2026-09-24
+        </p>
+        <h2 id="context">Context</h2>
+        <p>
+          Governance decision 0002 established CC BY-SA 4.0 as the default
+          licence for Macro Evidence's public governance corpus. At the time,
+          the repository was composed of Macro Evidence-authored
+          governance/documentation material and did not contain a maintained
+          legal form derived from a differently licensed third-party template.
+        </p>
+        <p>
+          The contributor-rights system introduces ICLA/ECLA reference forms
+          adapted from Harmony Contributor License Agreement Version 1.0.
+          Harmony's templates carry an explicit Creative Commons Attribution 3.0
+          Unported provenance/licensing boundary and permit modification and
+          redistribution subject to the applicable attribution terms. Silently
+          presenting the adapted forms as ordinary CC BY-SA governance content
+          would blur source provenance and the file-specific rights basis.
+        </p>
+        <p>
+          The surrounding contribution policy, ADRs, execution process, privacy
+          notice, third-party-material process, and Macro Evidence-authored
+          explanatory material do not require the same exception.
+        </p>
+        <h2 id="decision">Decision</h2>
+        <p>
+          Replace the repository-wide-without-exception licensing premise of
+          decision 0002 with an explicit licensing map:
+        </p>
+        <ul>
+          <li>
+            CC BY-SA 4.0 remains the&#32;<strong>default</strong>&#32;licence
+            for Macro Evidence-authored governance and policy content;
+          </li>
+          <li>
+            Harmony-derived Macro Evidence ICLA/ECLA forms and their same-terms
+            reference-format derivatives are expressly identified under CC BY
+            3.0 with upstream attribution/provenance;
+          </li>
+          <li>
+            <code>LICENSING.md</code>&#32;is the canonical map for
+            repository-level exceptions to the root default licence;
+          </li>
+          <li>
+            third-party material retains its own applicable terms and is not
+            silently relicensed by repository placement; and
+          </li>
+          <li>
+            repository licensing does not grant trademark, official-status, or
+            identity rights addressed separately by the Trademarks Policy.
+          </li>
+        </ul>
+        <p>
+          This decision supersedes governance decision 0002 as the canonical
+          governance-repository licensing architecture while preserving CC BY-SA
+          4.0 as the default.
+        </p>
+        <h2 id="consequences">Consequences</h2>
+        <ul>
+          <li>
+            The governance repository becomes explicitly mixed-licensed where
+            source provenance requires it instead of obscuring a real
+            third-party-derived legal-form boundary.
+          </li>
+          <li>
+            Existing CC BY-SA 4.0 governance content remains under that licence.
+          </li>
+          <li>
+            Harmony-derived forms preserve clear attribution and do not imply
+            Harmony endorsement of Macro Evidence modifications.
+          </li>
+          <li>
+            Downstream users must consult&#32;<code>LICENSING.md</code>&#32;when
+            reusing files covered by an explicit exception.
+          </li>
+          <li>
+            Future exceptions require explicit provenance and a documented
+            licence map rather than ad hoc notices.
+          </li>
+        </ul>
+      </article>
+      <div class="reference-links">
+        <a class="text-link" href="/governance/decisions">
+          All Governance decisions →
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
