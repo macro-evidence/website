@@ -18,6 +18,7 @@ Canonical website: https://macro-evidence.com/
 - [Organization & Platform Charter](https://macro-evidence.com/governance/organization-charter): Mission, vision, organization/platform scope, and durable direction.
 - [Governance & Decision-Making Charter](https://macro-evidence.com/governance/decision-making): Decision criteria, review, and Architecture Decision Records.
 - [Documentation Standards](https://macro-evidence.com/governance/documentation-standards): Documentation ownership, writing, formatting, naming, and commit conventions.
+- [Governance decisions](https://macro-evidence.com/governance/decisions): Organization-level decision records and their statuses.
 - [Contribution Policy](https://github.com/macro-evidence/governance/blob/main/CONTRIBUTION_POLICY.md): Organization-wide participation, acceptance, contributor-rights, and stewardship policy.
 - [Trademarks Policy](https://github.com/macro-evidence/governance/blob/main/TRADEMARKS.md): Name, mark, and visual-identity use policy.
 - [Security Policy](https://github.com/macro-evidence/.github/blob/main/SECURITY.md): Canonical vulnerability-reporting policy.

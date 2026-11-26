@@ -1,0 +1,110 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageIntro from '../../../components/PageIntro.astro';
+---
+
+<Layout
+  title="0008. Establish MDD as an organization-level sibling reference layer | Macro Evidence"
+  description="Governance decision 0008: Establish MDD as an organization-level sibling reference layer. Status: Accepted."
+>
+  <PageIntro
+    kicker="Governance decision"
+    title="0008. Establish MDD as an organization-level sibling reference layer"
+    lead="Governance decision 0008 of the Macro Evidence Governance decision series."
+  />
+
+  <section class="section policy-page">
+    <div class="site-container reading policy-reading-wide">
+      <article class="policy-text">
+        <p class="policy-status">
+          <strong>Status:</strong>&#32;Accepted<br />&#32;<strong>Date:</strong
+          >&#32;2026-09-24
+        </p>
+        <h2 id="context">Context</h2>
+        <p>
+          Governance decision 0001 established that Macro Evidence should extend
+          one coherent macro-data foundation rather than create parallel
+          foundations for related products. Macro Data Dictionary (MDD) has been
+          initialized as a Macro Evidence repository and needs an explicit
+          organization-level relationship to Macro Data Observatory (MDO) before
+          substantive implementation begins.
+        </p>
+        <p>
+          Treating MDD as a child of MDO would make an organization-level
+          reference layer appear to be an MDO-only subproject. Treating it as an
+          independent data foundation would create the opposite problem:
+          duplicated technical/data truth and a competing source of record.
+        </p>
+        <p>
+          The durable boundary is therefore between organizational relationship
+          and source-of-truth ownership. MDD can be a sibling product layer
+          while still depending on the canonical sources of whichever Macro
+          Evidence product a referenced fact belongs to.
+        </p>
+        <h2 id="decision">Decision</h2>
+        <p>
+          Macro Data Dictionary (MDD) is an organization-owned sibling of Macro
+          Data Observatory (MDO) under Macro Evidence. It is not a child or
+          subproject of MDO, and it is not an independent macro-data foundation.
+        </p>
+        <p>
+          MDO remains Macro Evidence's flagship and foundational macro-data
+          platform. Canonical technical and data facts about MDO's data
+          processing, schemas, series, metadata, units, allowed values, and
+          implementation remain owned by MDO's repository, runtime, and other
+          designated MDO canonical sources.
+        </p>
+        <p>
+          MDD is a bounded reference and explanatory layer. It may define and
+          explain macroeconomic terminology, metadata concepts, and
+          organization-wide reference material, and it may serve MDO and future
+          Macro Evidence products where their subject matter overlaps. When MDD
+          presents product-specific technical or data facts, it derives or
+          references those facts from that product's canonical sources rather
+          than maintaining a conflicting copy as an independent source of truth.
+        </p>
+        <p>
+          This decision preserves governance decision 0001's one-foundation
+          rule. It does not decide MDD's implementation architecture, schema,
+          deployment URL, visual identity, substantial reference-content
+          license, or substantive feature scope.
+        </p>
+        <h2 id="consequences">Consequences</h2>
+        <ul>
+          <li>
+            <code>ORGANIZATION_CHARTER.md</code>&#32;records MDO and MDD as
+            organization-level siblings with distinct roles while preserving
+            MDO's flagship/foundational status.
+          </li>
+          <li>
+            MDD may eventually explain concepts across more than one Macro
+            Evidence product without being structurally subordinate to MDO.
+          </li>
+          <li>
+            MDO remains authoritative for its own implementation and data facts;
+            MDD does not create a second technical source of truth.
+          </li>
+          <li>
+            MDD may remain intentionally minimal until a separate
+            implementation-start decision is approved.
+          </li>
+          <li>
+            Before substantial reference content is added, MDD's
+            reference-content licensing boundary must be decided explicitly
+            rather than inherited accidentally from the repository's
+            software-oriented root license.
+          </li>
+          <li>
+            Product URLs, identity design, schemas, deployment architecture, and
+            substantive feature scope remain outside this ADR.
+          </li>
+        </ul>
+      </article>
+      <div class="reference-links">
+        <a class="text-link" href="/governance/decisions">
+          All Governance decisions →
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

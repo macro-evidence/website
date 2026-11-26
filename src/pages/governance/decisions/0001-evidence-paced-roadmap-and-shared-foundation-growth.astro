@@ -1,0 +1,103 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageIntro from '../../../components/PageIntro.astro';
+---
+
+<Layout
+  title="0001. Evidence-paced roadmap and shared-foundation product growth | Macro Evidence"
+  description="Governance decision 0001: Evidence-paced roadmap and shared-foundation product growth. Status: Accepted."
+>
+  <PageIntro
+    kicker="Governance decision"
+    title="0001. Evidence-paced roadmap and shared-foundation product growth"
+    lead="Governance decision 0001 of the Macro Evidence Governance decision series."
+  />
+
+  <section class="section policy-page">
+    <div class="site-container reading policy-reading-wide">
+      <article class="policy-text">
+        <p class="policy-status">
+          <strong>Status:</strong>&#32;Accepted<br />&#32;<strong>Date:</strong
+          >&#32;2026-08-20
+        </p>
+        <h2 id="context">Context</h2>
+        <p>
+          <code>ORGANIZATION_CHARTER.md</code>&#32;1.1.0 describes MDO through a
+          fixed five-stage roadmap and gates future products on MDO clearing a
+          specific milestone.
+        </p>
+        <p>
+          Subsequent MDO development has shown that meaningful architectural
+          requirements emerge from live implementation rather than from a fixed
+          feature sequence. Multiple independent sources now operate through a
+          shared series-first architecture, and the next useful work is
+          determined by what the existing system still needs rather than by
+          advancing a predetermined stage label.
+        </p>
+        <p>
+          The existing charter also lists future products as separate roadmap
+          items. That framing leaves open the possibility of parallel products
+          recreating the same macroeconomic-data foundation, which conflicts
+          with Macro Evidence's established direction toward one coherent,
+          extensible infrastructure.
+        </p>
+        <p>
+          Both questions affect organization-level platform scope and future
+          repository/product decisions, so they are recorded here as a
+          cross-cutting organizational decision rather than remaining implicit
+          in a charter rewrite.
+        </p>
+        <h2 id="decision">Decision</h2>
+        <p>
+          Replace the fixed public five-stage MDO roadmap with an&#32;<strong
+            >evidence-paced trajectory</strong
+          >. The organization charter states durable direction rather than
+          precommitting to a fixed sequence of features. Current MDO capability
+          remains owned by the MDO repository and verified runtime evidence;
+          non-trivial architectural and scope changes continue through the
+          applicable ADR process.
+        </p>
+        <p>
+          Future Macro Evidence products&#32;<strong
+            >extend, expose, or operate on MDO's shared macroeconomic-data
+            foundation rather than recreating the same underlying infrastructure
+            in parallel</strong
+          >. Product form may evolve as evidence warrants, and any later
+          decision to change this one-foundation relationship requires its own
+          explicit organizational decision.
+        </p>
+        <h2 id="consequences">Consequences</h2>
+        <ul>
+          <li>
+            <code>ORGANIZATION_CHARTER.md</code>&#32;1.2.0 replaces the fixed
+            five-stage roadmap with evidence-paced directional guidance.
+          </li>
+          <li>
+            Future products are no longer gated by an arbitrary milestone label;
+            each material addition is evaluated against the decision criteria
+            in&#32;<code>GOVERNANCE.md</code>.
+          </li>
+          <li>
+            The charter does not cache a detailed capability roadmap. Current
+            implementation and maturity claims remain in the MDO repository and
+            runtime evidence.
+          </li>
+          <li>
+            Macro Evidence can add new interfaces and products without
+            duplicating the canonical macroeconomic-data foundation.
+          </li>
+          <li>
+            This does not change&#32;<code>GOVERNANCE.md</code>&#32;§3's
+            organization-wide execution model: tasks still require objectives,
+            review, approval, and real deliverables.
+          </li>
+        </ul>
+      </article>
+      <div class="reference-links">
+        <a class="text-link" href="/governance/decisions">
+          All Governance decisions →
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
