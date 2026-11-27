@@ -3,6 +3,9 @@
 **Status:** Accepted
 **Date:** 2026-09-11
 
+> [!NOTE]
+> [Governance decision 0013](https://macro-evidence.com/governance/decisions/0013-consolidate-governance-publication-into-the-website-repository) makes this repository the canonical source of Macro Evidence's public governance content and publishes that content as first-party pages. The sentence of the Decision section that begins "Canonical governance, policy, contribution, and security records are not republished" applies to records that remain owned by another repository.
+
 ## Context
 
 The repository contains software/source code, visitor-facing editorial content, official Macro Evidence identity assets, and separately licensed third-party material used by the build. Those rights layers should not be conflated.
@@ -19,8 +22,6 @@ Use separate licensing boundaries:
 Website-owned summaries or adaptations of organization material remain visitor-facing content under CC BY-SA 4.0. Canonical governance, policy, contribution, and security records are not republished as repository-owned website snapshots; relevant pages link to the canonical repositories that own those records.
 
 Package metadata identifies the website software package as Apache-2.0 while repository documentation keeps visitor-content, identity, and third-party licensing boundaries explicit. The public `/licensing` route gives visitors a first-party orientation to the same boundaries. The production build carries the exact Apache-2.0, CC BY-SA 4.0, and Inter OFL texts under `/licenses/` together with the Inter attribution notice.
-
-The last sentence of the second paragraph of this section applies to records that remain owned by another repository. [Governance decision 0013](https://macro-evidence.com/governance/decisions/0013-consolidate-governance-publication-into-the-website-repository) makes this repository the canonical source of Macro Evidence's public governance content and publishes that content as first-party pages.
 
 ## Consequences
 

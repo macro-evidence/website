@@ -17,7 +17,7 @@ import PageIntro from '../../components/PageIntro.astro';
     <div class="site-container reading policy-reading-wide">
       <article class="policy-text">
         <p class="policy-status">
-          Version 1.0.0 · Active<br />&#32;Last updated 2026-11-25
+          Version 1.0.0 · Active<br />&#32;Last updated 2026-11-27
         </p>
         <h2 id="1-principle">1. Principle</h2>
         <p>
@@ -330,6 +330,50 @@ import PageIntro from '../../components/PageIntro.astro';
             repository history.
           </li>
         </ul>
+        <p>
+          A note block records how an accepted decision applies in light of a
+          later decision, without changing the decision. It follows the
+          lifecycle lines directly, before the first heading:
+        </p>
+        <pre
+          tabindex="0"><code class="language-markdown">**Status:** Accepted
+**Date:** YYYY-MM-DD
+
+&gt; [!NOTE]
+&gt; [Governance decision 0013](link) clarifies how this decision applies to records that remain owned by another repository.
+
+## Context
+</code></pre>
+        <p>Rules for note blocks:</p>
+        <ul>
+          <li>
+            A note block appears only on an&#32;<code>Accepted</code
+            >&#32;decision. A decision carries at most one.
+          </li>
+          <li>
+            Use a note, not an edit to the text, when the clarification comes
+            from a later decision. A factual error is still corrected in the
+            text under the rule above.
+          </li>
+          <li>
+            A note names the later decision that prompts it, in the series form
+            required by section 5.1, and links to it.
+          </li>
+          <li>
+            A note identifies the part of the decision it concerns by naming the
+            section or quoting its opening words, never by position.
+          </li>
+          <li>
+            A note does not restate, reword, add to or remove anything from the
+            decision. It does not change&#32;<code>Status</code
+            >&#32;or&#32;<code>Date</code>. A change in the decision itself is
+            recorded in a new decision, as above.
+          </li>
+          <li>
+            In Markdown, the note is a GitHub&#32;<code>NOTE</code>&#32;alert as
+            shown. A published page shows the same text in the same place.
+          </li>
+        </ul>
         <h3 id="53-required-structure">5.3 Required structure</h3>
         <p>A new ADR uses:</p>
         <pre
@@ -506,12 +550,13 @@ Expected benefits, costs, trade-offs, risks, and follow-up implications.
           <li>no unrelated changes combined only for convenience.</li>
         </ul>
         <h2 id="changelog">Changelog</h2>
-        <h3 id="100-2026-11-25">1.0.0 (2026-11-25)</h3>
+        <h3 id="100-2026-11-27">1.0.0 (2026-11-27)</h3>
         <ul>
           <li>
             Initial version. Re-established on the Macro Evidence website. The
             substance continues the earlier published version of this document.
           </li>
+          <li>Adds note blocks for accepted decisions (section 5.2).</li>
         </ul>
       </article>
     </div>
