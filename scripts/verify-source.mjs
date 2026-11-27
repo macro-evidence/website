@@ -383,9 +383,9 @@ if (packageJson.dependencies?.['@fontsource-variable/inter'] !== '5.3.0') {
     'Inter build dependency must remain exactly pinned to @fontsource-variable/inter@5.3.0.',
   );
 }
-if (packageJson.devDependencies?.['markdownlint-cli'] !== '0.49.1')
+if (packageJson.devDependencies?.['markdownlint-cli'] !== '0.50.1')
   throw new Error(
-    'Markdown lint dependency must remain exactly pinned to markdownlint-cli@0.49.1.',
+    'Markdown lint dependency must remain exactly pinned to markdownlint-cli@0.50.1.',
   );
 const expectedMarkdownlintOverrides = {
   'js-yaml': '5.4.3',
