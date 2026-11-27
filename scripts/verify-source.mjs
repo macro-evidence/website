@@ -607,7 +607,7 @@ const policyPages = [
 for (const page of policyPages) {
   const pageSource = await readFile(join(root, page), 'utf8');
   const status = pageSource.match(
-    /<p class="policy-status">\s*Version (\d+\.\d+\.\d+) · Active · Last updated (\d{4}-\d{2}-\d{2})\s*<\/p>/,
+    /<p class="policy-status">\s*Version (\d+\.\d+\.\d+) · Active\s*<br \/>\s*(?:&#32;)?\s*Last updated (\d{4}-\d{2}-\d{2})\s*<\/p>/,
   );
   const firstEntry = pageSource.match(
     /<h2 id="changelog">\s*Changelog\s*<\/h2>\s*<h3 id="[^"]*">\s*(\d+\.\d+\.\d+) \((\d{4}-\d{2}-\d{2})\)\s*<\/h3>/,
