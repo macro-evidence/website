@@ -3,6 +3,9 @@
 **Status:** Accepted
 **Date:** 2026-09-11
 
+> [!NOTE]
+> [Governance decision 0013](https://macro-evidence.com/governance/decisions/0013-consolidate-governance-publication-into-the-website-repository) makes this repository the canonical source of Macro Evidence's public governance content and publishes that content as first-party pages. The paragraph of the Decision section that begins "Canonical governance, policy, contribution, and security records remain authoritative" and the Consequences item that begins "Deep institutional records may require" apply to records that remain owned by another repository.
+
 ## Context
 
 Macro Evidence needs a first-party institutional website that creates value beyond a repository index while keeping Macro Data Observatory's technical and product depth with the platform that owns it.
@@ -14,8 +17,6 @@ Macro Evidence needs a first-party institutional website that creates value beyo
 Macro Data Observatory remains the flagship and foundational platform. The organization website may explain that relationship and route visitors to MDO, but it does not duplicate volatile product documentation, provider inventories, APIs, catalogue behavior, or future MDO product surfaces.
 
 Canonical governance, policy, contribution, and security records remain authoritative in the repositories that own them. The website provides concise first-party orientation and explicit links to those canonical sources when deeper material is needed; it does not maintain a second publication copy of the record corpus.
-
-The third paragraph of this section and the last item under Consequences apply to records that remain owned by another repository. [Governance decision 0013](https://macro-evidence.com/governance/decisions/0013-consolidate-governance-publication-into-the-website-repository) makes this repository the canonical source of Macro Evidence's public governance content and publishes that content as first-party pages.
 
 ## Consequences
 
