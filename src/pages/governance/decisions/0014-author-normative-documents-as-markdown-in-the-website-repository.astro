@@ -1,0 +1,173 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageIntro from '../../../components/PageIntro.astro';
+---
+
+<Layout
+  title="0014. Author normative documents as Markdown in the website repository | Macro Evidence"
+  description="Governance decision 0014: Author normative documents as Markdown in the website repository. Status: Accepted."
+>
+  <PageIntro
+    kicker="Governance decision"
+    title="0014. Author normative documents as Markdown in the website repository"
+    lead="Governance decision 0014 of the Macro Evidence Governance decision series."
+  />
+
+  <section class="section policy-page">
+    <div class="site-container reading policy-reading-wide">
+      <article class="policy-text">
+        <p class="policy-status">
+          <strong>Status:</strong>&#32;Accepted<br />&#32;<strong>Date:</strong
+          >&#32;2026-11-28
+        </p>
+        <h2 id="context">Context</h2>
+        <p>
+          Governance decision 0013 made the website repository the canonical
+          source of Macro Evidence's public governance content. It states that
+          each document is written directly as an Astro page. It considered and
+          rejected keeping Markdown as the source and rendering it in the
+          website. Its reasons: that keeps two authoring formats for one
+          published page, and it adds a rendering layer whose only purpose is to
+          preserve the old format.
+        </p>
+        <p>
+          The pages published under that decision show what hand-written HTML
+          costs for long text. The page sources hold many character entities
+          that exist only to keep a space next to an inline element. Code
+          samples need escaped angle brackets. The source check reads the status
+          line of a policy page with a regular expression over HTML. A
+          built-output check rejects words that a formatter has fused to an
+          inline tag. A person who owns the wording of a document cannot change
+          a sentence without handling tags.
+        </p>
+        <p>Three alternatives were considered:</p>
+        <ul>
+          <li>
+            Keep hand-written Astro pages. This keeps the costs above and keeps
+            checks that must parse HTML.
+          </li>
+          <li>
+            Write the documents in MDX. MDX allows imports, exports and JSX in
+            the text, and it reads a brace in the text as an expression.
+            Normative text needs none of these, and a brace in legal wording
+            must not stop a build. The repository's Markdown lint does not cover
+            MDX files.
+          </li>
+          <li>
+            Write the documents as plain Markdown with validated frontmatter in
+            a content collection of the website repository, and let Astro build
+            the pages from them in the same build as the rest of the site. This
+            keeps one authoring format and one source for each page, and adds no
+            layer whose purpose is to preserve another format.
+          </li>
+        </ul>
+        <h2 id="decision">Decision</h2>
+        <p>
+          Write each normative document of the website repository as one plain
+          Markdown file with validated frontmatter, in a content collection of
+          the website repository. Astro builds the published page from that
+          file. Interface pages stay Astro pages.
+        </p>
+        <p>
+          <strong>What this does not change.</strong> One Markdown file for each document
+          inside the website repository is not a separate Markdown corpus, content
+          repository, mirror or synchronization mechanism in the sense of decision
+          0013. There is one repository, one source for each page and one build. The
+          address of each document is unchanged.
+        </p>
+        <p><strong>Rules.</strong></p>
+        <ul>
+          <li>
+            A normative document contains no raw HTML, JSX, imports or exports.
+            The website build must reject them.
+          </li>
+          <li>
+            The frontmatter of a document records its title, version, status and
+            last-updated date. The build must fail when a field is missing,
+            unknown or invalid.
+          </li>
+          <li>
+            A note block, the GitHub <code>NOTE</code> alert defined in the Documentation
+            Standards, is shown on the published page as a note.
+          </li>
+          <li>
+            MDX may be used for a single document only when a need is shown with
+            evidence and the maintainer approves. This decision does not allow
+            it by default.
+          </li>
+          <li>
+            Converting an existing page to Markdown changes its format only. Its
+            address, text, heading identifiers, link targets and dates do not
+            change. A conversion is checked against the built page before it
+            merges.
+          </li>
+          <li>
+            A document that exists as an Astro page when this decision is
+            accepted stays one until it is converted. Each document has one form
+            at any time. A document published after this decision is written as
+            Markdown.
+          </li>
+        </ul>
+        <p>
+          <strong>Relation to decision 0013.</strong> This decision supersedes decision
+          0013 in part:
+        </p>
+        <ul>
+          <li>
+            the sentence in the section Decision that begins &quot;Each document
+            has one canonical page, written directly as an Astro page&quot;; and
+          </li>
+          <li>
+            the alternative in the section Context that begins &quot;Keep
+            Markdown as the source and render it in the website&quot;.
+          </li>
+        </ul>
+        <p>
+          The rest of decision 0013 stays in force. The sentence &quot;There is
+          no separate Markdown corpus, content repository, mirror or
+          synchronization mechanism&quot; stays and applies as stated above. The
+          sentence &quot;The chosen option has no mirror, no second source and
+          no rendering layer&quot; stays with the purpose it states: no layer
+          exists to preserve a second authoring format.
+        </p>
+        <h2 id="consequences">Consequences</h2>
+        <ul>
+          <li>
+            An owner of a document can change its text without handling HTML. A
+            change is reviewed as Markdown.
+          </li>
+          <li>The repository's Markdown lint covers the document files.</li>
+          <li>
+            The checks that read page markup must read frontmatter and the built
+            page instead.
+          </li>
+          <li>
+            The Markdown processor and its plugins become dependencies. They are
+            pinned. A change of processor needs a check that the text of every
+            converted page is unchanged.
+          </li>
+          <li>
+            Existing pages convert in later changes. Until then, documents exist
+            in both forms.
+          </li>
+          <li>
+            A route that the verification scripts do not know fails the release
+            verification, as decision 0013 requires.
+          </li>
+          <li>
+            The contribution boundary of decision 0013 applies to the Markdown
+            files as it applied to the pages.
+          </li>
+          <li>
+            A material change to this authoring model needs a new decision.
+          </li>
+        </ul>
+      </article>
+      <div class="reference-links">
+        <a class="text-link" href="/governance/decisions">
+          All Governance decisions →
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

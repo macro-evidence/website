@@ -87,6 +87,7 @@ const requiredFiles = [
   'src/pages/governance/decisions/0011-use-mixed-licensing-for-github-community-content-and-executable-automation.astro',
   'src/pages/governance/decisions/0012-define-github-contributor-rights-enforcement-architecture.astro',
   'src/pages/governance/decisions/0013-consolidate-governance-publication-into-the-website-repository.astro',
+  'src/pages/governance/decisions/0014-author-normative-documents-as-markdown-in-the-website-repository.astro',
   'src/pages/code-of-conduct.astro',
   'src/pages/contribute.astro',
   'src/pages/security.astro',
