@@ -80,6 +80,7 @@ const baseRoutes = [
   '/governance/decisions/0011-use-mixed-licensing-for-github-community-content-and-executable-automation',
   '/governance/decisions/0012-define-github-contributor-rights-enforcement-architecture',
   '/governance/decisions/0013-consolidate-governance-publication-into-the-website-repository',
+  '/governance/decisions/0014-author-normative-documents-as-markdown-in-the-website-repository',
   '/licensing',
   '/principles',
   '/privacy',

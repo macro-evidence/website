@@ -18,8 +18,44 @@ import PageIntro from '../../../components/PageIntro.astro';
       <article class="policy-text">
         <p class="policy-status">
           <strong>Status:</strong>&#32;Accepted<br />&#32;<strong>Date:</strong
-          >&#32;2026-11-26
+          >&#32;2026-11-26<br />&#32;<strong>Superseded in part by:</strong
+          >&#32;<a
+            href="/governance/decisions/0014-author-normative-documents-as-markdown-in-the-website-repository"
+            >Governance decision 0014</a
+          >
         </p>
+        <div class="doc-note" role="note">
+          <p class="doc-note-label">
+            <svg
+              class="doc-note-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <circle cx="8" cy="8" r="6.25"></circle>
+              <path d="M8 7.25v3.75"></path>
+              <path d="M8 5.1h.01"></path>
+            </svg>
+            <span>Note</span>
+          </p>
+          <p>
+            <a
+              href="/governance/decisions/0014-author-normative-documents-as-markdown-in-the-website-repository"
+              >Governance decision 0014</a
+            >&#32;supersedes the alternative in the section Context that begins
+            &quot;Keep Markdown as the source and render it in the website&quot;
+            and the sentence in the section Decision that begins &quot;Each
+            document has one canonical page, written directly as an Astro
+            page&quot;. The rest of this decision remains in force.
+          </p>
+        </div>
         <h2 id="context">Context</h2>
         <p>
           Macro Evidence keeps its organization-level governance in a standalone
