@@ -17,7 +17,7 @@ import PageIntro from '../../components/PageIntro.astro';
     <div class="site-container reading policy-reading-wide">
       <article class="policy-text">
         <p class="policy-status">
-          Version 1.0.0 · Active<br />&#32;Last updated 2026-11-27
+          Version 1.0.0 · Active<br />&#32;Last updated 2026-11-28
         </p>
         <h2 id="1-principle">1. Principle</h2>
         <p>
@@ -194,7 +194,15 @@ import PageIntro from '../../components/PageIntro.astro';
         </p>
         <p>For independently versioned governance and policy documents:</p>
         <ul>
-          <li>the title is followed by one version/status blockquote;</li>
+          <li>
+            the title is followed by one version/status block, a blockquote in
+            Markdown. A published page may show it on two lines;
+          </li>
+          <li>
+            the last-updated date in that block is the date of the last change
+            to the text of the document. A change to format only does not move
+            it;
+          </li>
           <li>
             <code>## Changelog</code> contains one level-three heading per released
             version in the form <code>### MAJOR.MINOR.PATCH (YYYY-MM-DD)</code>,
@@ -374,6 +382,51 @@ import PageIntro from '../../components/PageIntro.astro';
             shown. A published page shows the same text in the same place.
           </li>
         </ul>
+        <p>
+          A decision that a later decision supersedes only in part stays&#32;<code
+            >Accepted</code
+          >. It carries one more lifecycle line and one note block:
+        </p>
+        <pre
+          tabindex="0"><code class="language-markdown">**Status:** Accepted
+**Date:** YYYY-MM-DD
+**Superseded in part by:** [Governance decision NNNN](link)
+
+&gt; [!NOTE]
+&gt; [Governance decision NNNN](link) supersedes the sentence in the section Decision that begins "opening words". The rest of this decision remains in force.
+
+## Context
+</code></pre>
+        <p>Rules for partial supersession:</p>
+        <ul>
+          <li>
+            A decision is superseded in part when a later decision replaces one
+            identified part of it and leaves the rest in force.
+          </li>
+          <li>
+            <code>Status</code> stays <code>Accepted</code>. <code>Date</code> stays.
+            The text of the decision is not edited.
+          </li>
+          <li>
+            <code>Superseded in part by</code> follows <code>Date</code>. It
+            links to each later decision in the series form required by section
+            5.1. Separate several links with commas.
+          </li>
+          <li>
+            The note block names the superseded part by section or by its
+            opening words, never by position, and states that the rest remains
+            in force. It is the one note block the decision may carry. A second
+            clarification goes into the same note.
+          </li>
+          <li>
+            The later decision states in its own text which part it supersedes.
+          </li>
+          <li>
+            When a later decision supersedes the whole decision, or when the
+            part that remains in force no longer stands without the replaced
+            part, use the <code>Superseded</code> form.
+          </li>
+        </ul>
         <h3 id="53-required-structure">5.3 Required structure</h3>
         <p>A new ADR uses:</p>
         <pre
@@ -484,7 +537,7 @@ Expected benefits, costs, trade-offs, risks, and follow-up implications.
             references.
           </li>
           <li>
-            Governance and policy documents use their version/status blockquote
+            Governance and policy documents use their version/status block
             rather than a brand tagline.
           </li>
           <li>
@@ -550,13 +603,20 @@ Expected benefits, costs, trade-offs, risks, and follow-up implications.
           <li>no unrelated changes combined only for convenience.</li>
         </ul>
         <h2 id="changelog">Changelog</h2>
-        <h3 id="100-2026-11-27">1.0.0 (2026-11-27)</h3>
+        <h3 id="100-2026-11-28">1.0.0 (2026-11-28)</h3>
         <ul>
           <li>
             Initial version. Re-established on the Macro Evidence website. The
             substance continues the earlier published version of this document.
           </li>
-          <li>Adds note blocks for accepted decisions (section 5.2).</li>
+          <li>
+            Adds note blocks for accepted decisions and the form for a partial
+            supersession (section 5.2).
+          </li>
+          <li>
+            Clarifies the version/status block and defines the last-updated date
+            (section 4).
+          </li>
         </ul>
       </article>
     </div>
